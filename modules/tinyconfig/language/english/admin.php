@@ -18,6 +18,8 @@
 
 define( '_AM_TINYCFG_WARNINSTALL', 'WARNING: Folder %s does not exists on your server. <br />This folder is required by TinyConfig.' );
 
+define( '_AM_TINYCFG_INDEX', '<b>Configure:</b> General configuration of TinyMCE. This applies to all User Groups.<br /><b>Toolsets:</b> Configure the toolsets per User Group.' );
+
 
 define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );
@@ -69,7 +71,7 @@ define( '_AM_TINYCFG_SKIN_CONTRAST', 'High Contrast' );
 define( '_AM_TINYCFG_SKIN_O2K7', 'O2K7' );
 
 define( '_AM_TINYCFG_SKINVAR', 'Select skin variant' );
-define( '_AM_TINYCFG_SKINVARDSC', '' );
+define( '_AM_TINYCFG_SKINVARDSC', 'The skin variant applies to the O2K7 skin only.' );
 define( '_AM_TINYCFG_SKINVAR_BLACK', 'Black' );
 define( '_AM_TINYCFG_SKINVAR_SILVER', 'Silver' );
 
