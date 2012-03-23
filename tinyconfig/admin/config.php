@@ -83,7 +83,7 @@ function config_edit() {
 	$sform -> addElement( $skin_select );
 
 	$skinvar_array = array( 'none' => _NONE, 'black' => _AM_TINYCFG_SKINVAR_BLACK, 'silver' => _AM_TINYCFG_SKINVAR_SILVER );
-	$skinvar_select = new icms_form_elements_Select( _AM_TINYCFG_SKINVAR, 'skinvariant', $skinvariant );
+	$skinvar_select = new icms_form_elements_Select( _AM_TINYCFG_SKINVAR . tinycfg_tooltip( _AM_TINYCFG_SKINVARDSC, 'help' ), 'skinvariant', $skinvariant );
 	$skinvar_select -> addOptionArray( $skinvar_array );
 	$sform -> addElement( $skinvar_select );
 
