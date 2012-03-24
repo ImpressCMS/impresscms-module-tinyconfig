@@ -30,6 +30,7 @@ CREATE TABLE `tinycfg_toolsets` (
 	`buttons1` longtext NOT NULL,
 	`buttons2` longtext NOT NULL,
 	`buttons3` longtext NOT NULL,
+	`toolbarloc` varchar(128) NOT NULL default 'top',
 	`statusbar` varchar(128) NOT NULL default 'bottom',
 	`resize` varchar(128) NOT NULL default 'true',
 	PRIMARY KEY (tinycfg_id)
