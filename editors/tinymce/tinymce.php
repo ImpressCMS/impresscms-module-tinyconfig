@@ -152,7 +152,7 @@ class TinyMCE {
 				$this->setting["theme_".$this->setting["theme"]."_toolbar_location"] = $this->config["toolbar_location"];
 				$configured[] = "toolbar_location";
 			} else {
-				$this->setting["theme_".$this->setting["theme"]."_toolbar_location"] = "top";
+				$this->setting["theme_".$this->setting["theme"]."_toolbar_location"] = $tinycfg_arr['toolbarloc'];
 			}
 
 			if (isset($this->config["toolbar_align"])) {
@@ -223,7 +223,7 @@ class TinyMCE {
 			$callback = "";
 		}
 
-		$ret = '<script language="javascript" type="text/javascript" src="' . XOOPS_URL . $this->rootpath . '/tiny_mce.js"></script>';
+		$ret = '<script language="javascript" type="text/javascript" src="' . ICMS_URL . $this->rootpath . '/tiny_mce.js"></script>';
 		$ret .= '
 				<script language="javascript" type="text/javascript">
 				tinyMCE.init({
@@ -250,6 +250,7 @@ class TinyMCE {
 		skin : "' . $tinycfg_arr['skin'] . '",
 		skin_variant : "' . $skinvariant . '",
 		verify_html : ' . $tinycfg_arr['verifyhtml'] . ',
+		document_base_url : "' . ICMS_URL . '",
 		convert_urls : ' . $tinycfg_arr['converturls'] . ',
 		relative_urls : ' . $tinycfg_arr['relativeurls'] . ',
 		remove_script_host : false,
