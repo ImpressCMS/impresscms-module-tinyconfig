@@ -116,6 +116,7 @@ class TinyMCE {
 			$this->setting["theme_advanced_buttons1"] = $tinycfg_arr['buttons1'];
 			$this->setting["theme_advanced_buttons2"] = $tinycfg_arr['buttons2'];
 			$this->setting["theme_advanced_buttons3"] = $tinycfg_arr['buttons3'];
+			$this->setting["theme_advanced_buttons4"] = $tinycfg_arr['buttons4'];
 		}
 
 		if ($this->setting["theme"] != "simple") {
@@ -253,7 +254,7 @@ class TinyMCE {
 		document_base_url : "' . ICMS_URL . '",
 		convert_urls : ' . $tinycfg_arr['converturls'] . ',
 		relative_urls : ' . $tinycfg_arr['relativeurls'] . ',
-		remove_script_host : false,
+		remove_script_host : ' . $tinycfg_arr['relativeurls'] . ',
 		force_br_newlines : ' . $tinycfg_arr['forcebr'] . ',
 		force_p_newlines : ' . $tinycfg_arr['forcep'] . ',
 		forced_root_block : "' . $tinycfg_arr['forcedrootblock'] . '",
