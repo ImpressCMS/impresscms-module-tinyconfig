@@ -30,7 +30,7 @@ $modversion = array(
 
 	'description'		=> '',
 	'author'			=> 'McDonald',
-	'credits'			=> 'frankblack (tinyeditor author)',
+	'credits'			=> 'Moxiecode Systems AB (TinyMCE), frankblack (TinyEditor author)',
 	'license'			=> 'GNU General Public License (GPL)',
 	'image'				=> 'images/tinycfg.png',
 	'iconbig'			=> 'images/tinycfg_big.png',
@@ -41,6 +41,8 @@ $modversion = array(
 
 // ** Contributors **
 $modversion['people']['developers'] [] = '<a href="http://community.impresscms.org/userinfo.php?uid=179" target="_blank">McDonald</a>&nbsp;&nbsp;<span style="font-size: smaller;">( pietjebell31 [at] hotmail [dot] com )</span>';
+
+$modversion['manual']['wiki'][] = '<a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE Configuration</a>';
 
 $modversion['warning'] = _CO_ICMS_WARNING_BETA;
 
