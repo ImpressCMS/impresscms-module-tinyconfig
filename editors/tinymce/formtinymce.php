@@ -57,9 +57,19 @@ class XoopsFormTinymce extends icms_form_elements_Textarea {
   * Initializes tinyMCE
   **/
 	function initTinymce() {
-		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=2';
+
+		if ( is_object( icms::$user ) && !empty( icms::$user ) ) {
+			$uid = icms::$user -> getVar('uid');
+			$sql = 'SELECT groupid FROM '  . icms::$xoopsDB -> prefix( 'groups_users_link' ) . ' WHERE uid=' . $uid;
+			$result = icms::$xoopsDB -> query( $sql );
+			list( $groupid ) = icms::$xoopsDB -> fetchRow( $result );
+		 } else {
+			$groupid = 3;
+		 }
+
+		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $groupid;
 		$tinycfg_array = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
-	
+
 		$this->config ["elements"] = $this->getName() . '_tarea';
 		$this->config ["language"] = $this->getLanguage ();
 		$this->config ["rootpath"] = $this->rootpath;
