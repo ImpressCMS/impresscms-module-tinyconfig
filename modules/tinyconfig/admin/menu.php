@@ -23,9 +23,11 @@ $adminmenu[1]['small'] = 'images/tinycfg_small.png'; // 16x16 px for drop down
 
 $adminmenu[2]['title'] = _MI_TINYCFG_CONFIG;
 $adminmenu[2]['link']  = 'admin/config.php';
+$adminmenu[2]['icon']  = 'images/tinycfg_config.png';
 
 $adminmenu[3]['title'] = _MI_TINYCFG_TOOLSETS;
 $adminmenu[3]['link']  = 'admin/toolsets.php?op=edit';
+$adminmenu[3]['icon']  = 'images/tinycfg_toolbar.png';
 
 $tinycfgModule = icms_getModuleInfo( basename( dirname( dirname( __FILE__ ) ) ) );
 

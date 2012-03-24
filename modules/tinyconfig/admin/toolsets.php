@@ -69,19 +69,19 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$sform -> setExtra( 'enctype="multipart/form-data"' );
 
 
-	$pluginz = new icms_form_elements_Textarea( _AM_TINYCFG_PLUGINS, 'plugins', $plugins, 7, 60);
+	$pluginz = new icms_form_elements_Textarea( _AM_TINYCFG_PLUGINS, 'plugins', $plugins, 4, 60);
 	$sform -> addElement( $pluginz, false );
 
-	$buttonsa = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB1, 'buttons1', $buttons1, 7, 60);
+	$buttonsa = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB1, 'buttons1', $buttons1, 4, 60);
 	$sform -> addElement( $buttonsa, false );
 
-	$buttonsb = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB2, 'buttons2', $buttons2, 7, 60);
+	$buttonsb = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB2, 'buttons2', $buttons2, 4, 60);
 	$sform -> addElement( $buttonsb, false );
 
-	$buttonsc = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB3, 'buttons3', $buttons3, 7, 60);
+	$buttonsc = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB3, 'buttons3', $buttons3, 4, 60);
 	$sform -> addElement( $buttonsc, false );
 	
-	$buttonsd = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB4, 'buttons4', $buttons4, 7, 60);
+	$buttonsd = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB4, 'buttons4', $buttons4, 4, 60);
 	$sform -> addElement( $buttonsd, false );
 
 	$toolbarloc_array = array( 'bottom'=>_AM_TINYCFG_BOTTOM, 'top'=>_AM_TINYCFG_TOP );
