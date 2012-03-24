@@ -38,13 +38,12 @@ define( '_AM_TINYCFG_BUTTONB3', 'Button bar 3' );
 define( '_AM_TINYCFG_BUTTONB4', 'Button bar 4' );
 define( '_AM_TINYCFG_TOOLBARLOC', 'Toolbar location' );
 define( '_AM_TINYCFG_STATUSB', 'Elements path location' );
+define( '_AM_TINYCFG_RESIZE', 'Resize' );
 define( '_AM_TINYCFG_BOTTOM', 'bottom' );
 define( '_AM_TINYCFG_TOP', 'top' );
 define( '_AM_TINYCFG_NONE', 'none' );
-define( '_AM_TINYCFG_RESIZE', 'Resize' );
 define( '_AM_TINYCFG_TRUE', 'true' );
 define( '_AM_TINYCFG_FALSE', 'false' );
-
 
 define( '_AM_TINYCFG_CONFIG', 'Configure' );
 define( '_AM_TINYCFG_CONFIGSAVE', 'Configuration for TinyMCE editor has been saved.' );

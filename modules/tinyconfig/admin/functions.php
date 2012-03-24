@@ -1,4 +1,20 @@
 <?php
+/**
+* TinyConfig
+*
+* File: /admin/functions.php
+*
+* @copyright	http://www.xoops.org/ The XOOPS Project
+* @copyright	XOOPS_copyrights.txt
+* @copyright	http://www.impresscms.org/ The ImpressCMS Project
+* @license		GNU General Public License (GPL)
+*				a copy of the GNU license is enclosed.
+* ----------------------------------------------------------------------------------------------------------
+* 				TinyConfig
+* @since		1.00
+* @author		McDonald
+* @version		$Id$
+*/
 
 function tinycfg_tooltip( $description, $tip = 'help' ) {
 	switch ( $tip ) {
