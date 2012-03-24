@@ -45,6 +45,7 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$buttons1		= $tinycfg_array['buttons1'] ? htmlspecialchars( $tinycfg_array['buttons1'] ) : 'bold,italic,underline,strikethrough,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,formatselect,fontselect,fontsizeselect';
 	$buttons2		= $tinycfg_array['buttons2'] ? htmlspecialchars( $tinycfg_array['buttons2'] ) : 'xoopsquote,xoopscode,icmsmlcontent,separator,bullist,numlist,separator,outdent,indent,separator,undo,redo,removeformat,separator,link,unlink,anchor,xoopsimagemanager,media,separator,charmap,nonbreaking,hr,xoopsemotions,separator,pastetext,pasteword,separator,forecolor,backcolor';
 	$buttons3		= $tinycfg_array['buttons3'] ? htmlspecialchars( $tinycfg_array['buttons3'] ) : 'tablecontrols,separator,cleanup,visualaid,visualchars,separator,insertdate,inserttime,separator,preview,fullscreen,help,code';
+	$toolbarloc		= $tinycfg_array['toolbarloc'] ? htmlspecialchars( $tinycfg_array['toolbarloc'] ) : 'top';
 	$statusbar		= $tinycfg_array['statusbar'] ? htmlspecialchars( $tinycfg_array['statusbar'] ) : 'bottom';
 	$resize			= $tinycfg_array['resize'] ? htmlspecialchars( $tinycfg_array['resize'] ) : 'true';
 
@@ -61,10 +62,11 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 			}
 		}
 	closedir($dir);
-	echo '<div style="border: 1px solid #d9d9d9; margin-bottom: 10px; padding: 5px;"><b>' . _AM_TINYCFG_PLUGINSAVAIL . '</b><br />' . $pluginslist . '</div>';
+	echo '<div style="border: 1px solid #d9d9d9; margin-bottom: 10px; padding: 5px;"><b>' . _AM_TINYCFG_PLUGINSAVAIL . '</b> ' . $pluginslist . '</div>';
 
 	$sform = new icms_form_Theme( _AM_TINYCFG_TOOLSETSMCE, 'storyform', 'toolsets.php' );
 	$sform -> setExtra( 'enctype="multipart/form-data"' );
+
 
 	$pluginz = new icms_form_elements_Textarea( _AM_TINYCFG_PLUGINS, 'plugins', $plugins, 7, 60);
 	$sform -> addElement( $pluginz, false );
@@ -78,7 +80,12 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$buttonsc = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB3, 'buttons3', $buttons3, 7, 60);
 	$sform -> addElement( $buttonsc, false );
 
-	$status_array = array( 'none'=>_AM_TINYCFG_STATUSB_NONE, 'bottom'=>_AM_TINYCFG_STATUSB_BOTTOM, 'top'=>_AM_TINYCFG_STATUSB_TOP );
+	$toolbarloc_array = array( 'bottom'=>_AM_TINYCFG_BOTTOM, 'top'=>_AM_TINYCFG_TOP );
+	$toolbarloc_select = new icms_form_elements_Select( _AM_TINYCFG_TOOLBARLOC, 'toolbarloc', $toolbarloc );
+	$toolbarloc_select -> addOptionArray( $toolbarloc_array );
+	$sform -> addElement( $toolbarloc_select );
+
+	$status_array = array( 'none'=>_AM_TINYCFG_NONE, 'bottom'=>_AM_TINYCFG_BOTTOM, 'top'=>_AM_TINYCFG_TOP );
 	$status_select = new icms_form_elements_Select( _AM_TINYCFG_STATUSB, 'statusbar', $statusbar );
 	$status_select -> addOptionArray( $status_array );
 	$sform -> addElement( $status_select );
@@ -127,21 +134,21 @@ switch ( strtolower( $op ) ) {
 		break;
 
 	case 'save_toolsets':
-		$tinycfg_id = ( !empty( $_POST['tinycfg_id'] ) ) ? $_POST['tinycfg_id'] : 0;
-		$plugins	= icms_core_DataFilter::addSlashes( trim( $_POST['plugins'] ) );
-		$buttons1	= icms_core_DataFilter::addSlashes( trim( $_POST['buttons1'] ) );
-		$buttons2	= icms_core_DataFilter::addSlashes( trim( $_POST['buttons2'] ) );
-		$buttons3	= icms_core_DataFilter::addSlashes( trim( $_POST['buttons3'] ) );
-		$statusbar	= addslashes( trim( $_POST['statusbar'] ) );
-		$resize		= addslashes( trim( $_POST['resize'] ) );
+		$tinycfg_id		= ( !empty( $_POST['tinycfg_id'] ) ) ? $_POST['tinycfg_id'] : 0;
+		$plugins		= icms_core_DataFilter::addSlashes( trim( $_POST['plugins'] ) );
+		$buttons1		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons1'] ) );
+		$buttons2		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons2'] ) );
+		$buttons3		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons3'] ) );
+		$toolbarloc		= addSlashes( trim( $_POST['toolbarloc'] ) );
+		$statusbar		= addslashes( trim( $_POST['statusbar'] ) );
+		$resize			= addslashes( trim( $_POST['resize'] ) );
 		$tinycfg_gid	= $_POST['tinycfg_gid'];
-	
+
 		if ( !$tinycfg_id ) {
-		
-			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, statusbar, resize)";
-			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$statusbar', '$resize')";
+			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, toolbarloc, statusbar, resize)";
+			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$toolbarloc', '$statusbar', '$resize')";
 		} else {
-			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', statusbar='$statusbar', resize='$resize' WHERE tinycfg_gid = " . $tinycfg_gid;
+			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', toolbarloc='$toolbarloc', statusbar='$statusbar', resize='$resize' WHERE tinycfg_gid = " . $tinycfg_gid;
 		}
 		if ( !$result = icms::$xoopsDB -> queryF( $sql ) ) {
 			icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );

@@ -48,6 +48,20 @@ function config_edit() {
 
 	$sform = new icms_form_Theme( 'TinyMCE Configuration', 'storyform', '' );
 	$sform -> setExtra( 'enctype="multipart/form-data"' );
+	
+	$sform -> insertBreak( '&#9658; <b><i>' . _AM_TINYCFG_GENERAL . '</i></b>', 'odd' );
+	
+	$skin_array = array( 'default' => _AM_TINYCFG_SKIN_DEFAULT, 'highcontrast' => _AM_TINYCFG_SKIN_CONTRAST, 'o2k7' => _AM_TINYCFG_SKIN_O2K7 );
+	$skin_select = new icms_form_elements_Select( _AM_TINYCFG_SKIN, 'skin', $skin );
+	$skin_select -> addOptionArray( $skin_array );
+	$sform -> addElement( $skin_select );
+
+	$skinvar_array = array( 'none' => _NONE, 'black' => _AM_TINYCFG_SKINVAR_BLACK, 'silver' => _AM_TINYCFG_SKINVAR_SILVER );
+	$skinvar_select = new icms_form_elements_Select( _AM_TINYCFG_SKINVAR . tinycfg_tooltip( _AM_TINYCFG_SKINVARDSC, 'help' ), 'skinvariant', $skinvariant );
+	$skinvar_select -> addOptionArray( $skinvar_array );
+	$sform -> addElement( $skinvar_select );
+	
+	$sform -> insertBreak( '&#9658; <b><i>' . _AM_TINYCFG_CONFIGOUTPUT . '</i></b>', 'odd' );
 
 	$verify_array = array( 'false' => _AM_TINYCFG_FALSE, 'true' => _AM_TINYCFG_TRUE );
 	$verify_select = new icms_form_elements_Select( _AM_TINYCFG_VERIFYHTML . tinycfg_tooltip( _AM_TINYCFG_VERIFYHTMLDSC, 'help' ), 'verifyhtml', $verifyhtml );
@@ -77,15 +91,7 @@ function config_edit() {
 	$forcedrootblck = new icms_form_elements_Text( _AM_TINYCFG_FORCEDRTBLCK . tinycfg_tooltip( _AM_TINYCFG_FORCEDRTBLCKDSC, 'help' ), 'forcedrootblock', 5, 1, $forcedrootblock );
 	$sform -> addElement( $forcedrootblck );
 
-	$skin_array = array( 'default' => _AM_TINYCFG_SKIN_DEFAULT, 'highcontrast' => _AM_TINYCFG_SKIN_CONTRAST, 'o2k7' => _AM_TINYCFG_SKIN_O2K7 );
-	$skin_select = new icms_form_elements_Select( _AM_TINYCFG_SKIN, 'skin', $skin );
-	$skin_select -> addOptionArray( $skin_array );
-	$sform -> addElement( $skin_select );
-
-	$skinvar_array = array( 'none' => _NONE, 'black' => _AM_TINYCFG_SKINVAR_BLACK, 'silver' => _AM_TINYCFG_SKINVAR_SILVER );
-	$skinvar_select = new icms_form_elements_Select( _AM_TINYCFG_SKINVAR . tinycfg_tooltip( _AM_TINYCFG_SKINVARDSC, 'help' ), 'skinvariant', $skinvariant );
-	$skinvar_select -> addOptionArray( $skinvar_array );
-	$sform -> addElement( $skinvar_select );
+	
 
 	$button_tray = new icms_form_elements_Tray( '', '' );
 	$hidden = new icms_form_elements_Hidden( 'op', 'save' );
