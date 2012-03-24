@@ -1,9 +1,9 @@
-# MySQL file for Impression
+# MySQL file for TinyConfig
 # Author: McDonald
 
 
 #
-# Table structure for table 'impression_configs'
+# Table structure for table 'tinycfg_configs'
 #
 
 CREATE TABLE `tinycfg_configs` (
@@ -19,8 +19,9 @@ CREATE TABLE `tinycfg_configs` (
 
 INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,forcebr,forcep,forcedrootblock,skin,skinvariant) VALUES ('false','false','false','false','true','p','default','silver');
 
+
 #
-# Table structure for table 'impression_configs'
+# Table structure for table 'tinycfg_toolsets'
 #
 
 CREATE TABLE `tinycfg_toolsets` (
@@ -30,6 +31,7 @@ CREATE TABLE `tinycfg_toolsets` (
 	`buttons1` longtext NOT NULL,
 	`buttons2` longtext NOT NULL,
 	`buttons3` longtext NOT NULL,
+	`buttons4` longtext NOT NULL,
 	`toolbarloc` varchar(128) NOT NULL default 'top',
 	`statusbar` varchar(128) NOT NULL default 'bottom',
 	`resize` varchar(128) NOT NULL default 'true',

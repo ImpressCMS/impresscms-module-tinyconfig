@@ -45,6 +45,7 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$buttons1		= $tinycfg_array['buttons1'] ? htmlspecialchars( $tinycfg_array['buttons1'] ) : 'bold,italic,underline,strikethrough,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,formatselect,fontselect,fontsizeselect';
 	$buttons2		= $tinycfg_array['buttons2'] ? htmlspecialchars( $tinycfg_array['buttons2'] ) : 'xoopsquote,xoopscode,icmsmlcontent,separator,bullist,numlist,separator,outdent,indent,separator,undo,redo,removeformat,separator,link,unlink,anchor,xoopsimagemanager,media,separator,charmap,nonbreaking,hr,xoopsemotions,separator,pastetext,pasteword,separator,forecolor,backcolor';
 	$buttons3		= $tinycfg_array['buttons3'] ? htmlspecialchars( $tinycfg_array['buttons3'] ) : 'tablecontrols,separator,cleanup,visualaid,visualchars,separator,insertdate,inserttime,separator,preview,fullscreen,help,code';
+	$buttons4		= $tinycfg_array['buttons4'] ? htmlspecialchars( $tinycfg_array['buttons4'] ) : '';
 	$toolbarloc		= $tinycfg_array['toolbarloc'] ? htmlspecialchars( $tinycfg_array['toolbarloc'] ) : 'top';
 	$statusbar		= $tinycfg_array['statusbar'] ? htmlspecialchars( $tinycfg_array['statusbar'] ) : 'bottom';
 	$resize			= $tinycfg_array['resize'] ? htmlspecialchars( $tinycfg_array['resize'] ) : 'true';
@@ -79,6 +80,9 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 
 	$buttonsc = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB3, 'buttons3', $buttons3, 7, 60);
 	$sform -> addElement( $buttonsc, false );
+	
+	$buttonsd = new icms_form_elements_Textarea( _AM_TINYCFG_BUTTONB4, 'buttons4', $buttons4, 7, 60);
+	$sform -> addElement( $buttonsd, false );
 
 	$toolbarloc_array = array( 'bottom'=>_AM_TINYCFG_BOTTOM, 'top'=>_AM_TINYCFG_TOP );
 	$toolbarloc_select = new icms_form_elements_Select( _AM_TINYCFG_TOOLBARLOC, 'toolbarloc', $toolbarloc );
@@ -139,16 +143,17 @@ switch ( strtolower( $op ) ) {
 		$buttons1		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons1'] ) );
 		$buttons2		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons2'] ) );
 		$buttons3		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons3'] ) );
+		$buttons4		= icms_core_DataFilter::addSlashes( trim( $_POST['buttons4'] ) );
 		$toolbarloc		= addSlashes( trim( $_POST['toolbarloc'] ) );
 		$statusbar		= addslashes( trim( $_POST['statusbar'] ) );
 		$resize			= addslashes( trim( $_POST['resize'] ) );
 		$tinycfg_gid	= $_POST['tinycfg_gid'];
 
 		if ( !$tinycfg_id ) {
-			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, toolbarloc, statusbar, resize)";
-			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$toolbarloc', '$statusbar', '$resize')";
+			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, buttons4, toolbarloc, statusbar, resize)";
+			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$buttons4', '$toolbarloc', '$statusbar', '$resize')";
 		} else {
-			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', toolbarloc='$toolbarloc', statusbar='$statusbar', resize='$resize' WHERE tinycfg_gid = " . $tinycfg_gid;
+			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', buttons4='$buttons4', toolbarloc='$toolbarloc', statusbar='$statusbar', resize='$resize' WHERE tinycfg_gid = " . $tinycfg_gid;
 		}
 		if ( !$result = icms::$xoopsDB -> queryF( $sql ) ) {
 			icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
