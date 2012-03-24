@@ -47,10 +47,21 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$buttons3		= $tinycfg_array['buttons3'] ? htmlspecialchars( $tinycfg_array['buttons3'] ) : 'tablecontrols,separator,cleanup,visualaid,visualchars,separator,insertdate,inserttime,separator,preview,fullscreen,help,code';
 	$statusbar		= $tinycfg_array['statusbar'] ? htmlspecialchars( $tinycfg_array['statusbar'] ) : 'bottom';
 	$resize			= $tinycfg_array['resize'] ? htmlspecialchars( $tinycfg_array['resize'] ) : 'true';
-	
+
 	if ( !$tinycfg_array['tinycfg_gid'] ) {
 		echo '<div style="border: 1px solid #d9d9d9; margin-bottom: 10px; padding: 5px;">' . _AM_TINYCFG_TOOLSETS_NOTSET . '</div>';
 	}
+
+	$pluginslist = '';
+	$dirname = ICMS_ROOT_PATH.'/editors/tinymce/jscripts/plugins/';
+	$dir = opendir( $dirname );
+		while ( $filename = readdir( $dir ) ) {
+			if ( $filename != '.' && $filename != '..' && $filename != 'owntoolbar' && $filename != 'CVS' && $filename != 'index.html' ) {
+				$pluginslist .= $filename . ', ';
+			}
+		}
+	closedir($dir);
+	echo '<div style="border: 1px solid #d9d9d9; margin-bottom: 10px; padding: 5px;"><b>' . _AM_TINYCFG_PLUGINSAVAIL . '</b><br />' . $pluginslist . '</div>';
 
 	$sform = new icms_form_Theme( _AM_TINYCFG_TOOLSETSMCE, 'storyform', 'toolsets.php' );
 	$sform -> setExtra( 'enctype="multipart/form-data"' );

@@ -25,6 +25,7 @@ define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );
 define( '_AM_TINYCFG_TOOLSETS_NOTSET', '<b>This group has no toolset yet!</b><br />The values you see are default values. Please edit and submit the form to create a toolset for this group.' );
 define( '_AM_TINYCFG_TOOLSAVE', 'Toolset for TinyMCE editor have been saved.' );
+define( '_AM_TINYCFG_PLUGINSAVAIL', 'Plugins available:' );
 
 define( '_AM_TINYCFG_GROUPS', 'Groups' );
 define( '_AM_TINYCFG_GROUPSELECT', 'Select a group' );
