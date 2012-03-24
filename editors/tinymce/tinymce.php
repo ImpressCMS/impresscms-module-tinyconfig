@@ -77,16 +77,17 @@ class TinyMCE {
 	function init() {
 		global $icmsConfigMultilang, $icmsConfigPersona;
 
-		if ( is_object( icms::$user ) && !empty( icms::$user ) ) {
-			$uid = icms::$user -> getVar('uid');
-			$sql = 'SELECT groupid FROM '  . icms::$xoopsDB -> prefix( 'groups_users_link' ) . ' WHERE uid=' . $uid;
-			$result = icms::$xoopsDB -> query( $sql );
-			list( $groupid ) = icms::$xoopsDB -> fetchRow( $result );
-		 } else {
-			$groupid = 3;
-		 }
+		if ( is_object( icms::$user ) ) {
+			$uid = icms::$user -> getVar( 'uid' );
+			$getthegroupid = icms::$user -> getGroups( $uid );
+			$thegroupid = array_slice( $getthegroupid, 0, 1 );
+			$thegroupid = implode( ' ', $thegroupid );
+			$thegroupid = trim( $thegroupid );
+		} else {
+			$thegroupid = 3;
+		}
 
-		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $groupid;
+		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
 		$tinycfg_arr = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
 		$configured = array();
