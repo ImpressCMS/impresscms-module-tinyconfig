@@ -14,10 +14,11 @@ CREATE TABLE `tinycfg_configs` (
 	`forcep` varchar(128) NOT NULL default 'true',
 	`forcedrootblock` varchar(128) NOT NULL default 'p',
 	`skin` varchar(128) NOT NULL default 'default',
-	`skinvariant` varchar(128) NOT NULL default 'silver'
+	`skinvariant` varchar(128) NOT NULL default 'silver',
+	`sschema` varchar(128) NOT NULL default '4'
 );
 
-INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,forcebr,forcep,forcedrootblock,skin,skinvariant) VALUES ('false','false','false','false','true','p','default','silver');
+INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,forcebr,forcep,forcedrootblock,skin,skinvariant,sschema) VALUES ('false','false','false','false','true','p','default','silver','4');
 
 
 #

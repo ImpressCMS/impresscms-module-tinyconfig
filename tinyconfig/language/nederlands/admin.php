@@ -49,7 +49,7 @@ define( '_AM_TINYCFG_CONFIG', 'Configuratie' );
 define( '_AM_TINYCFG_CONFIGSAVE', 'De configuratie voor de TinyMCE editor is opgeslagen.' );
 
 define( '_AM_TINYCFG_VERIFYHTML', 'Controlleer HTML' );
-define( '_AM_TINYCFG_VERIFYHTMLDSC', 'This option enables or disables the element cleanup functionality. If you set this option to false, all element cleanup will be skipped but other cleanup functionality such as URL conversion will still be executed.<br />Standaard: <i>nee</i>' );
+define( '_AM_TINYCFG_VERIFYHTMLDSC', 'Deze optie schakelt de funktie voor het opschonen van de elementen in of uit. Als u deze optie uitschakelt wordt het opschonen overgeslagen, maar het opschonen van bijv. URL conversie wordt wel uitgevoerd.<br />Standaard: <i>nee</i>' );
 
 define( '_AM_TINYCFG_CONVERTURLS', 'Converteer URLs' );
 define( '_AM_TINYCFG_CONVERTURLSDSC', 'This option enables you to control whether TinyMCE is to be clever and restore URLs to their original values. URLs are automatically converted (messed up) by default because the built-in browser logic works this way. There is no way to get the real URL unless you store it away. If you set this option to false it will try to keep these URLs intact.<br />Standaard: <i>nee</i>' );
@@ -65,6 +65,9 @@ define( '_AM_TINYCFG_FORCEPDSC', 'Als de gekozen optie <i>Ja</i> is, dan zullen 
 
 define( '_AM_TINYCFG_FORCEDRTBLCK', 'Forceer root blok' );
 define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'Met deze optie kuntt u ervoor zorgen dat alle niet blok elementen of tekstnodes zijn verpakt in blok-elementen.<br />Standaard: <i>p</i>' );
+
+define( '_AM_TINYCFG_SCHEMA', 'Schema' );
+define( '_AM_TINYCFG_SCHEMADSC', 'Deze optie laat u kiezen tussen HTML4 en HTML5 schema. Dit regelt de geldige elementen en attributen die kunnen worden geplaatst in de HTML. <br />Standaard: <i>HTML4</i>' );
 
 define( '_AM_TINYCFG_SKIN', 'Selekteer uiterlijk' );
 define( '_AM_TINYCFG_SKINDSC', '' );
