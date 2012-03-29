@@ -259,6 +259,7 @@ class TinyMCE {
 		force_br_newlines : ' . $tinycfg_arr['forcebr'] . ',
 		force_p_newlines : ' . $tinycfg_arr['forcep'] . ',
 		forced_root_block : "' . $tinycfg_arr['forcedrootblock'] . '",
+		schema : "' . $tinycfg_arr['sschema'] . '",
 		tinymceload : "1"});
 		'.$callback.'
 		function showMCE(id) {
