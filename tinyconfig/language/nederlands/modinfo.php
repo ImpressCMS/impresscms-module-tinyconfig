@@ -16,6 +16,8 @@
 * @version		$Id$
 */
 
+define( '_MI_TINYCFG_DESCRIPTION', 'De module TinyConfig stelt u in staat de WYSIWYG editor TinyMCE op eenvoudige wijze te configureren, en taakbalken per Gebruikers Groep in te stellen.' );
+
 define( '_MI_TINYCFG_CONFIG', 'Configuratie' );
 define( '_MI_TINYCFG_TOOLSETS', 'Taakbalken' );
 

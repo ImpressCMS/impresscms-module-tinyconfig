@@ -16,6 +16,8 @@
 * @version		$Id$
 */
 
+define( '_MI_TINYCFG_DESCRIPTION', 'The module TinyConfig gives you the ability to configure the WYSIWYG editor TinyMCE and assign toolbars per User Group.' );
+
 define( '_MI_TINYCFG_CONFIG', 'Configure' );
 define( '_MI_TINYCFG_TOOLSETS', 'Toolsets' );
 

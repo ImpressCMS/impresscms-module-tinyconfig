@@ -29,7 +29,7 @@ if ( isset( $_POST['tinycfg_gid'] ) ) { $tinycfg_gid = $_POST['tinycfg_gid']; } 
 function toolsets_edit( $tinycfg_gid = 0 ) {
 	global $icmsConfig, $icmsAdminTpl;
 
-	if (!empty($_POST['grouplist'])) {
+	if ( !empty( $_POST['grouplist'] ) ) {
 
 	echo '<br />';
 
@@ -51,19 +51,19 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$resize			= $tinycfg_array['resize'] ? htmlspecialchars( $tinycfg_array['resize'] ) : 'true';
 
 	if ( !$tinycfg_array['tinycfg_gid'] ) {
-		echo '<div style="border: 1px solid #d9d9d9; margin-bottom: 10px; padding: 5px;">' . _AM_TINYCFG_TOOLSETS_NOTSET . '</div>';
+		echo '<div style="border: 1px solid #D9D9D9; border-radius: 4px; margin-bottom: 10px; padding: 5px; background: #FFCCCC;">' . _AM_TINYCFG_TOOLSETS_NOTSET . '</div>';
 	}
 
 	$pluginslist = '';
 	$dirname = ICMS_ROOT_PATH.'/editors/tinymce/jscripts/plugins/';
 	$dir = opendir( $dirname );
 		while ( $filename = readdir( $dir ) ) {
-			if ( $filename != '.' && $filename != '..' && $filename != 'owntoolbar' && $filename != 'CVS' && $filename != 'index.html' ) {
+			if ( $filename != '.' && $filename != '..' && $filename != 'CVS' && $filename != 'index.html' ) {
 				$pluginslist .= $filename . ', ';
 			}
 		}
 	closedir($dir);
-	echo '<div style="border: 1px solid #d9d9d9; margin-bottom: 10px; padding: 5px;"><b>' . _AM_TINYCFG_PLUGINSAVAIL . '</b> ' . $pluginslist . '</div>';
+	echo '<div style="border: 1px solid #D9D9D9; border-radius: 4px; margin-bottom: 10px; padding: 5px;"><b>' . _AM_TINYCFG_PLUGINSAVAIL . '</b> ' . $pluginslist . '</div>';
 
 	$sform = new icms_form_Theme( _AM_TINYCFG_TOOLSETSMCE, 'storyform', 'toolsets.php' );
 	$sform -> setExtra( 'enctype="multipart/form-data"' );
