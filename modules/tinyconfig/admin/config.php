@@ -135,7 +135,7 @@ switch ( strtolower( $op ) ) {
 		if ( !$result ) {
 			trigger_error( $error, E_USER_ERROR );
 		}
-		redirect_header( 'index.php', 2, _AM_TINYCFG_TOOLSAVE );
+		redirect_header( 'index.php', 2, _AM_TINYCFG_CONFIGSAVE );
 		break;
 }
 ?>

@@ -159,7 +159,7 @@ switch ( strtolower( $op ) ) {
 			icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
 			return false;
 		}
-		redirect_header( 'toolsets.php', 2, _AM_TINYCFG_CONFIGSAVE );
+		redirect_header( 'toolsets.php', 2, _AM_TINYCFG_TOOLSAVE );
 		break;
 }
 ?>
