@@ -24,11 +24,11 @@ global $icmsConfig;
 $modversion = array(
 	'name'				=> 'TinyConfig',
 	'version'			=> 1.0,
-	'status'			=> 'Trunk',
-	'status_version'	=> 'Trunk',
-	'date'				=> 'xx xxxxxx 201x',
+	'status'			=> 'RC-1',
+	'status_version'	=> 'RC-1',
+	'date'				=> '30 March 2012',
 
-	'description'		=> '',
+	'description'		=> _MI_TINYCFG_DESCRIPTION,
 	'author'			=> 'McDonald',
 	'credits'			=> 'Moxiecode Systems AB (TinyMCE), frankblack (TinyEditor author)',
 	'license'			=> 'GNU General Public License (GPL)',

@@ -18,7 +18,7 @@
 
 define( '_AM_TINYCFG_WARNINSTALL', 'WAARSCHUWING: De map %s bestaat niet op uw server.<br />Deze map is nodig voor TinyConfig.' );
 
-define( '_AM_TINYCFG_INDEX', '<b>Configuratie:</b> Algemene configuratie van TinyMCE. Deze configuratie is voor alle Gebruikers Groepen.<br /><b>Knoppenbalken:</b> Configuratie van de knoppenbalken per Gebruikers Groepen.' );
+define( '_AM_TINYCFG_INDEX', '<b>Configuratie:</b> Algemene configuratie van TinyMCE. Deze configuratie is voor alle Gebruikers Groepen.<br /><b>Taakbalken:</b> Configuratie van de taakbalken per Gebruikers Groep.' );
 define( '_AM_TINYCFG_GENERAL', 'Algemeen' );
 define( '_AM_TINYCFG_CONFIGOUTPUT', 'Cleanup/Output' );
 
@@ -55,7 +55,7 @@ define( '_AM_TINYCFG_CONVERTURLS', 'Converteer URLs' );
 define( '_AM_TINYCFG_CONVERTURLSDSC', 'This option enables you to control whether TinyMCE is to be clever and restore URLs to their original values. URLs are automatically converted (messed up) by default because the built-in browser logic works this way. There is no way to get the real URL unless you store it away. If you set this option to false it will try to keep these URLs intact.<br />Standaard: <i>nee</i>' );
 
 define( '_AM_TINYCFG_RELATIVEURLS', 'Relatieve URLs' );
-define( '_AM_TINYCFG_RELATIVEURLSDSC', 'If this option is set to true, all URLs returned from the Image Manager will be relative from ' . ICMS_URL . '. If it\'s set to false all URLs will be converted to absolute URLs.<br />Standaard: <i>nee</i>' );
+define( '_AM_TINYCFG_RELATIVEURLSDSC', 'Als de optie <i>ja</i> wordt gekozen, dan worden alle URLs van de Image Manager relatief van ' . ICMS_URL . '. Als de optie <i>nee</i> is dan worden alle URLs omgezet in absolute URLs.<br />Standaard: <i>nee</i>' );
 
 define( '_AM_TINYCFG_FORCEBR', 'Forceer BR elementen' );
 define( '_AM_TINYCFG_FORCEBRDSC', 'Deze optie forceert de uitvoer van BR elementen in plaats van P elementen.<br />Standaard: <i>nee</i>' );

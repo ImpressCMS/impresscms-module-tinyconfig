@@ -21,7 +21,7 @@ include 'admin_header.php';
 icms_cp_header();
 	icms::$module -> displayAdminMenu( 1, 'TinyConfig' );
 	warnings();
-	echo '<div style="border: 1px solid #d9d9d9; margin: 10px 0; padding: 5px;">' . _AM_TINYCFG_INDEX . '</div>';
+	echo '<div style="border: 1px solid #D9D9D9; border-radius: 4px; margin: 10px 0; padding: 5px;">' . _AM_TINYCFG_INDEX . '</div>';
 icms_cp_footer();
 
 ?>
