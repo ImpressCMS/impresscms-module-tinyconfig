@@ -69,16 +69,17 @@ class XoopsFormTinymce extends icms_form_elements_Textarea {
 		}
 
 		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
-		$tinycfg_array = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
+		$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
 		$this->config ["elements"] = $this->getName() . '_tarea';
 		$this->config ["language"] = $this->getLanguage ();
 		$this->config ["rootpath"] = $this->rootpath;
 		$this->config ["area_width"] = $this->_width;
 		$this->config ["area_height"] = $this->_height;
-		$this->config ["fonts"] = $this->getFonts ();
-		$this->config ["statusbar_location"] = $tinycfg_array['statusbar'];
-		if ( $tinycfg_array['resize'] == 'true' ) {
+		$this->config ["fonts"] = $tinycfg_tools['fontfamily'];
+		$this->config ["font_sizes"] = $tinycfg_tools['fontsize'];
+		$this->config ["statusbar_location"] = $tinycfg_tools['statusbar'];
+		if ( $tinycfg_tools['resize'] == 'true' ) {
 			$this->config ["resizing"] = "true";
 		}
 

@@ -88,7 +88,7 @@ class TinyMCE {
 		}
 
 		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
-		$tinycfg_arr = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
+		$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
 		$configured = array();
 		if (is_readable(ICMS_ROOT_PATH . $this->rootpath. '/langs/'.$this->config["language"].'.js')) {
@@ -104,7 +104,7 @@ class TinyMCE {
 		$configured[] = "language";
 		$configured[] = "theme";
 		$configured[] = "mode";
-		$this->setting["plugins"] = $tinycfg_arr['plugins'];
+		$this->setting["plugins"] = $tinycfg_tools['plugins'];
 		$this->setting["plugins"] .= !empty($this->config["plugins"]) ? ",".$this->config["plugins"] : "";
 		$configured[] = "plugins";
 
@@ -114,10 +114,10 @@ class TinyMCE {
 		}
 		$easiestml_exist = ($icmsConfigMultilang['ml_enable'] == true && defined('EASIESTML_LANGS') && defined('EASIESTML_LANGNAMES'));
 		if ($this->setting["theme"] == "advanced") {
-			$this->setting["theme_advanced_buttons1"] = $tinycfg_arr['buttons1'];
-			$this->setting["theme_advanced_buttons2"] = $tinycfg_arr['buttons2'];
-			$this->setting["theme_advanced_buttons3"] = $tinycfg_arr['buttons3'];
-			$this->setting["theme_advanced_buttons4"] = $tinycfg_arr['buttons4'];
+			$this->setting["theme_advanced_buttons1"] = $tinycfg_tools['buttons1'];
+			$this->setting["theme_advanced_buttons2"] = $tinycfg_tools['buttons2'];
+			$this->setting["theme_advanced_buttons3"] = $tinycfg_tools['buttons3'];
+			$this->setting["theme_advanced_buttons4"] = $tinycfg_tools['buttons4'];
 		}
 
 		if ($this->setting["theme"] != "simple") {
@@ -154,7 +154,7 @@ class TinyMCE {
 				$this->setting["theme_".$this->setting["theme"]."_toolbar_location"] = $this->config["toolbar_location"];
 				$configured[] = "toolbar_location";
 			} else {
-				$this->setting["theme_".$this->setting["theme"]."_toolbar_location"] = $tinycfg_arr['toolbarloc'];
+				$this->setting["theme_".$this->setting["theme"]."_toolbar_location"] = $tinycfg_tools['toolbarloc'];
 			}
 
 			if (isset($this->config["toolbar_align"])) {
@@ -187,6 +187,11 @@ class TinyMCE {
 			if (!empty($this->config["fonts"])) {
 				$this->setting["theme_".$this->setting["theme"]."_fonts"] = $this->config["fonts"];
 				$configured[] = "fonts";
+			}
+
+			if (!empty($this->config["font_sizes"])) {
+				$this->setting["theme_".$this->setting["theme"]."_font_sizes"] = $this->config["font_sizes"];
+				$configured[] = "font_sizes";
 			}
 		}
 
@@ -240,26 +245,26 @@ class TinyMCE {
 		}
 
 		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_configs' );
-		$tinycfg_arr = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
+		$tinycfg_configs = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
-		if ( $tinycfg_arr['skinvariant'] == 'none' ) { 
+		if ( $tinycfg_configs['skinvariant'] == 'none' ) { 
 			$skinvariant = '';
 		} else {
-			$skinvariant = $tinycfg_arr['skinvariant'];
+			$skinvariant = $tinycfg_configs['skinvariant'];
 		}
 
 		$ret .= '
-		skin : "' . $tinycfg_arr['skin'] . '",
+		skin : "' . $tinycfg_configs['skin'] . '",
 		skin_variant : "' . $skinvariant . '",
-		verify_html : ' . $tinycfg_arr['verifyhtml'] . ',
+		verify_html : ' . $tinycfg_configs['verifyhtml'] . ',
 		document_base_url : "' . ICMS_URL . '",
-		convert_urls : ' . $tinycfg_arr['converturls'] . ',
-		relative_urls : ' . $tinycfg_arr['relativeurls'] . ',
-		remove_script_host : ' . $tinycfg_arr['relativeurls'] . ',
-		force_br_newlines : ' . $tinycfg_arr['forcebr'] . ',
-		force_p_newlines : ' . $tinycfg_arr['forcep'] . ',
-		forced_root_block : "' . $tinycfg_arr['forcedrootblock'] . '",
-		schema : "' . $tinycfg_arr['sschema'] . '",
+		convert_urls : ' . $tinycfg_configs['converturls'] . ',
+		relative_urls : ' . $tinycfg_configs['relativeurls'] . ',
+		remove_script_host : ' . $tinycfg_configs['relativeurls'] . ',
+		force_br_newlines : ' . $tinycfg_configs['forcebr'] . ',
+		force_p_newlines : ' . $tinycfg_configs['forcep'] . ',
+		forced_root_block : "' . $tinycfg_configs['forcedrootblock'] . '",
+		schema : "' . $tinycfg_configs['sschema'] . '",
 		tinymceload : "1"});
 		'.$callback.'
 		function showMCE(id) {
