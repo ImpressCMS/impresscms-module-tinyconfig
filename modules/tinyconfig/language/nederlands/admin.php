@@ -19,8 +19,6 @@
 define( '_AM_TINYCFG_WARNINSTALL', 'WAARSCHUWING: De map %s bestaat niet op uw server.<br />Deze map is nodig voor TinyConfig.' );
 
 define( '_AM_TINYCFG_INDEX', '<b>Configuratie:</b> Algemene configuratie van TinyMCE. Deze configuratie is voor alle Gebruikers Groepen.<br /><b>Taakbalken:</b> Configuratie van de taakbalken per Gebruikers Groep.' );
-define( '_AM_TINYCFG_GENERAL', 'Algemeen' );
-define( '_AM_TINYCFG_CONFIGOUTPUT', 'Cleanup/Output' );
 
 define( '_AM_TINYCFG_TOOLSETS', 'Taakbalken' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Taakbalk' );
@@ -36,9 +34,16 @@ define( '_AM_TINYCFG_BUTTONB1', 'Taakbalk 1' );
 define( '_AM_TINYCFG_BUTTONB2', 'Taakbalk 2' );
 define( '_AM_TINYCFG_BUTTONB3', 'Taakbalk 3' );
 define( '_AM_TINYCFG_BUTTONB4', 'Taakbalk 4' );
+define( '_AM_TINYCFG_FONTFAMILY', 'Lettertype' );
+define( '_AM_TINYCFG_FONTFAMILYDSC', 'Deze optie moet een puntkomma gescheiden lijst bevatten van lettertitels en lettertype van elkaar gescheiden door =. De titels zijn degenen die de gebruiker zal zien in de letter drop-down menu en het lettertype naam is de string die wordt ingevoegd in het lettertype gezicht of fontFamily CSS stijl.' );
+define( '_AM_TINYCFG_FONTSIZE', 'Lettergrootte' );
+define( '_AM_TINYCFG_FONTSIZEDSC', 'Deze optie moet een komma gescheiden lijst bevatten van de lettergroottes. Ieder item in de lijst dient een geldige waarde te zijn voor de lettertype CSS eigenschap (10px, 12pt, 1em, etc.).' );
 define( '_AM_TINYCFG_TOOLBARLOC', 'Taakbalk lokatie' );
+define( '_AM_TINYCFG_TOOLBARLOCDSC', 'Met deze optie kunt u bepalen waar de taakbalk geplaatst wordt. Deze optie kan \'boven\' of \'onder\' zijn.<br />Standaard: <i>boven</i>' );
 define( '_AM_TINYCFG_STATUSB', 'Elementen pad lokatie' );
+define( '_AM_TINYCFG_STATUSBDSC', 'Met deze optie kunt u kiezen waar de elementen pad en de vergroten/verkleinen optie geplaatst worden. Deze optie kan \'geen\', \'boven\' of \'onder\' zijn.<br />Standaard: <i>onder</i>' );
 define( '_AM_TINYCFG_RESIZE', 'Vergroten en verkleinen' );
+define( '_AM_TINYCFG_RESIZEDSC', 'Deze optie geeft u de mogelijkheid om de vergroot/verklein knop in- of uit te schakelen. Deze optie werkt alleen als de optie voor de elementen pad \'boven\' of \'onder\' is.' );
 define( '_AM_TINYCFG_BOTTOM', 'onder' );
 define( '_AM_TINYCFG_TOP', 'boven' );
 define( '_AM_TINYCFG_NONE', 'geen' );
