@@ -19,8 +19,6 @@
 define( '_AM_TINYCFG_WARNINSTALL', 'WARNING: Folder %s does not exists on your server. <br />This folder is required by TinyConfig.' );
 
 define( '_AM_TINYCFG_INDEX', '<b>Configure:</b> General configuration of TinyMCE. This applies to all User Groups.<br /><b>Toolsets:</b> Configure the toolsets per User Group.' );
-define( '_AM_TINYCFG_GENERAL', 'General' );
-define( '_AM_TINYCFG_CONFIGOUTPUT', 'Cleanup/Output' );
 
 define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );

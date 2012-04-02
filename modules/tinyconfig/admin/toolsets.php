@@ -54,6 +54,8 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$resize			= $tinycfg_array['resize'] ? htmlspecialchars( $tinycfg_array['resize'] ) : 'true';
 	$fontfamily		= $tinycfg_array['fontfamily'] ? htmlspecialchars( $tinycfg_array['fontfamily'] ) : $fontfamily_default;
 	$fontsize		= $tinycfg_array['fontsize'] ? htmlspecialchars( $tinycfg_array['fontsize'] ) : $fontsize_default;
+	$skin			= $tinycfg_array['skin'] ? htmlspecialchars( $tinycfg_array['skin'] ) : 'default';
+	$skinvariant	= $tinycfg_array['skinvariant'] ? htmlspecialchars( $tinycfg_array['skinvariant'] ) : 'silver';
 
 	if ( !$tinycfg_array['tinycfg_gid'] ) {
 		echo '<div style="border: 1px solid #D9D9D9; border-radius: 4px; margin-bottom: 10px; padding: 5px; background: #FFCCCC;">' . _AM_TINYCFG_TOOLSETS_NOTSET . '</div>';
@@ -112,6 +114,16 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	$resize_select -> addOptionArray( $resize_array );
 	$sform -> addElement( $resize_select );
 
+	$skin_array = array( 'default' => _AM_TINYCFG_SKIN_DEFAULT, 'highcontrast' => _AM_TINYCFG_SKIN_CONTRAST, 'o2k7' => _AM_TINYCFG_SKIN_O2K7 );
+	$skin_select = new icms_form_elements_Select( _AM_TINYCFG_SKIN, 'skin', $skin );
+	$skin_select -> addOptionArray( $skin_array );
+	$sform -> addElement( $skin_select );
+
+	$skinvar_array = array( 'none' => _NONE, 'black' => _AM_TINYCFG_SKINVAR_BLACK, 'silver' => _AM_TINYCFG_SKINVAR_SILVER );
+	$skinvar_select = new icms_form_elements_Select( _AM_TINYCFG_SKINVAR . tinycfg_tooltip( _AM_TINYCFG_SKINVARDSC, 'help' ), 'skinvariant', $skinvariant );
+	$skinvar_select -> addOptionArray( $skinvar_array );
+	$sform -> addElement( $skinvar_select );
+
 	$sform -> addElement( new icms_form_elements_Hidden( 'tinycfg_gid', intval($_POST['grouplist'] ) ) );
 	$sform -> addElement( new icms_form_elements_Hidden( 'tinycfg_id', $tinycfg_id ) );
 
@@ -161,13 +173,15 @@ switch ( strtolower( $op ) ) {
 		$toolbarloc		= addSlashes( trim( $_POST['toolbarloc'] ) );
 		$statusbar		= addslashes( trim( $_POST['statusbar'] ) );
 		$resize			= addslashes( trim( $_POST['resize'] ) );
+		$skin			= addslashes( trim( $_POST['skin'] ) );
+		$skinvariant	= addslashes( trim( $_POST['skinvariant'] ) );
 		$tinycfg_gid	= $_POST['tinycfg_gid'];
 
 		if ( !$tinycfg_id ) {
 			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, buttons4, toolbarloc, statusbar, resize, fontfamily, fontsize)";
-			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$buttons4', '$toolbarloc', '$statusbar', '$resize')";
+			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$buttons4', '$toolbarloc', '$statusbar', '$resize', '$fontfamily', '$fontsize', '$skin', '$skinvariant')";
 		} else {
-			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', buttons4='$buttons4', toolbarloc='$toolbarloc', statusbar='$statusbar', resize='$resize', fontfamily='$fontfamily', fontsize='$fontsize' WHERE tinycfg_gid = " . $tinycfg_gid;
+			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', buttons4='$buttons4', toolbarloc='$toolbarloc', statusbar='$statusbar', resize='$resize', fontfamily='$fontfamily', fontsize='$fontsize', skin='$skin', skinvariant='$skinvariant' WHERE tinycfg_gid = " . $tinycfg_gid;
 		}
 		if ( !$result = icms::$xoopsDB -> queryF( $sql ) ) {
 			icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );

@@ -29,15 +29,13 @@ function config_edit() {
 	$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_configs' );
 	$tinycfg_array = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
-	$skin			= $tinycfg_array['skin'] ? htmlspecialchars( $tinycfg_array['skin'] ) : 'default';
-	$skinvariant	= $tinycfg_array['skinvariant'] ? htmlspecialchars( $tinycfg_array['skinvariant'] ) : 'silver';
 	$verifyhtml		= $tinycfg_array['verifyhtml'] ? htmlspecialchars( $tinycfg_array['verifyhtml'] ) : 'false';
 	$converturls	= $tinycfg_array['converturls'] ? htmlspecialchars( $tinycfg_array['converturls'] ) : 'false';
 	$relativeurls	= $tinycfg_array['relativeurls'] ? htmlspecialchars( $tinycfg_array['relativeurls'] ) : 'false';
 	$forcebr		= $tinycfg_array['forcebr'] ? htmlspecialchars( $tinycfg_array['forcebr'] ) : 'false';
 	$forcep			= $tinycfg_array['forcep'] ? htmlspecialchars( $tinycfg_array['forcep'] ) : 'true';
 	$forcedrootblock= $tinycfg_array['forcedrootblock'] ? htmlspecialchars( $tinycfg_array['forcedrootblock'] ) : 'p';
-	$sschema			= $tinycfg_array['sschema'] ? htmlspecialchars( $tinycfg_array['sschema'] ) : 'html4';
+	$sschema		= $tinycfg_array['sschema'] ? htmlspecialchars( $tinycfg_array['sschema'] ) : 'html4';
 
 	icms_cp_header();
 	icms::$module -> displayAdminMenu( 2, _AM_TINYCFG_CONFIG . ' | TinyConfig' );
@@ -49,20 +47,6 @@ function config_edit() {
 
 	$sform = new icms_form_Theme( 'TinyMCE Configuration', 'storyform', '' );
 	$sform -> setExtra( 'enctype="multipart/form-data"' );
-
-	$sform -> insertBreak( '&#9658; <b><i>' . _AM_TINYCFG_GENERAL . '</i></b>', 'odd' );
-
-	$skin_array = array( 'default' => _AM_TINYCFG_SKIN_DEFAULT, 'highcontrast' => _AM_TINYCFG_SKIN_CONTRAST, 'o2k7' => _AM_TINYCFG_SKIN_O2K7 );
-	$skin_select = new icms_form_elements_Select( _AM_TINYCFG_SKIN, 'skin', $skin );
-	$skin_select -> addOptionArray( $skin_array );
-	$sform -> addElement( $skin_select );
-
-	$skinvar_array = array( 'none' => _NONE, 'black' => _AM_TINYCFG_SKINVAR_BLACK, 'silver' => _AM_TINYCFG_SKINVAR_SILVER );
-	$skinvar_select = new icms_form_elements_Select( _AM_TINYCFG_SKINVAR . tinycfg_tooltip( _AM_TINYCFG_SKINVARDSC, 'help' ), 'skinvariant', $skinvariant );
-	$skinvar_select -> addOptionArray( $skinvar_array );
-	$sform -> addElement( $skinvar_select );
-
-	$sform -> insertBreak( '&#9658; <b><i>' . _AM_TINYCFG_CONFIGOUTPUT . '</i></b>', 'odd' );
 
 	$verify_array = array( 'false' => _AM_TINYCFG_FALSE, 'true' => _AM_TINYCFG_TRUE );
 	$verify_select = new icms_form_elements_Select( _AM_TINYCFG_VERIFYHTML . tinycfg_tooltip( _AM_TINYCFG_VERIFYHTMLDSC, 'help' ), 'verifyhtml', $verifyhtml );
@@ -119,8 +103,6 @@ switch ( strtolower( $op ) ) {
 
 	case 'save_config':
 
-		$skin			= addslashes( trim( $_POST['skin'] ) );
-		$skinvariant	= addslashes( trim( $_POST['skinvariant'] ) );
 		$verifyhtml		= addslashes( trim( $_POST['verifyhtml'] ) );
 		$converturls	= addslashes( trim( $_POST['converturls'] ) );
 		$relativeurls	= addslashes( trim( $_POST['relativeurls'] ) );
@@ -129,7 +111,7 @@ switch ( strtolower( $op ) ) {
 		$forcedrootblock= addslashes( trim( $_POST['forcedrootblock'] ) );
 		$sschema			= addslashes( trim( $_POST['sschema'] ) );
 
-		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', skin='$skin', skinvariant='$skinvariant', sschema='$sschema'";
+		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', sschema='$sschema'";
 		$result = icms::$xoopsDB -> queryF( $sql );
 		$error = 'DBERROR' . ': <br /><br />' . $sql;
 		if ( !$result ) {
