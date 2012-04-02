@@ -244,17 +244,30 @@ class TinyMCE {
 			}
 		}
 
+		if ( is_object( icms::$user ) ) {
+			$uid = icms::$user -> getVar( 'uid' );
+			$getthegroupid = icms::$user -> getGroups( $uid );
+			$thegroupid = array_slice( $getthegroupid, 0, 1 );
+			$thegroupid = implode( ' ', $thegroupid );
+			$thegroupid = trim( $thegroupid );
+		} else {
+			$thegroupid = 3;
+		}
+
+		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
+		$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
+
 		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_configs' );
 		$tinycfg_configs = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
-		if ( $tinycfg_configs['skinvariant'] == 'none' ) { 
+		if ( $tinycfg_tools['skinvariant'] == 'none' ) { 
 			$skinvariant = '';
 		} else {
-			$skinvariant = $tinycfg_configs['skinvariant'];
+			$skinvariant = $tinycfg_tools['skinvariant'];
 		}
 
 		$ret .= '
-		skin : "' . $tinycfg_configs['skin'] . '",
+		skin : "' . $tinycfg_tools['skin'] . '",
 		skin_variant : "' . $skinvariant . '",
 		verify_html : ' . $tinycfg_configs['verifyhtml'] . ',
 		document_base_url : "' . ICMS_URL . '",
