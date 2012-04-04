@@ -77,20 +77,25 @@ class TinyMCE {
 	function init() {
 		global $icmsConfigMultilang, $icmsConfigPersona;
 
-		if ( is_object( icms::$user ) ) {
-			$uid = icms::$user -> getVar( 'uid' );
-			$getthegroupid = icms::$user -> getGroups( $uid );
-			$thegroupid = array_slice( $getthegroupid, 0, 1 );
-			$thegroupid = implode( ' ', $thegroupid );
-			$thegroupid = trim( $thegroupid );
+		if ( $this -> config['setextra'] == 0 ) {
+			if ( is_object( icms::$user ) ) {
+				$uid = icms::$user -> getVar( 'uid' );
+				$getthegroupid = icms::$user -> getGroups( $uid );
+				$thegroupid = array_slice( $getthegroupid, 0, 1 );
+				$thegroupid = implode( ' ', $thegroupid );
+				$thegroupid = trim( $thegroupid );
+			} else {
+				$thegroupid = 3;
+			}
+			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
+			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 		} else {
-			$thegroupid = 3;
+			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_simpletoolset' );
+			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 		}
 
-		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
-		$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
-
 		$configured = array();
+		$this->setting["setextra"] = $this->config["setextra"];
 		if (is_readable(ICMS_ROOT_PATH . $this->rootpath. '/langs/'.$this->config["language"].'.js')) {
 			$this->setting["language"] = $this->config["language"];
 		}
@@ -116,8 +121,13 @@ class TinyMCE {
 		if ($this->setting["theme"] == "advanced") {
 			$this->setting["theme_advanced_buttons1"] = $tinycfg_tools['buttons1'];
 			$this->setting["theme_advanced_buttons2"] = $tinycfg_tools['buttons2'];
-			$this->setting["theme_advanced_buttons3"] = $tinycfg_tools['buttons3'];
-			$this->setting["theme_advanced_buttons4"] = $tinycfg_tools['buttons4'];
+			if ( $this -> setting['setextra'] == 0 ) {
+				$this->setting["theme_advanced_buttons3"] = $tinycfg_tools['buttons3'];
+				$this->setting["theme_advanced_buttons4"] = $tinycfg_tools['buttons4'];
+			} else {
+			$this->setting["theme_advanced_buttons3"] = '';
+			$this->setting["theme_advanced_buttons4"] = '';
+			}
 		}
 
 		if ($this->setting["theme"] != "simple") {
@@ -244,18 +254,22 @@ class TinyMCE {
 			}
 		}
 
-		if ( is_object( icms::$user ) ) {
-			$uid = icms::$user -> getVar( 'uid' );
-			$getthegroupid = icms::$user -> getGroups( $uid );
-			$thegroupid = array_slice( $getthegroupid, 0, 1 );
-			$thegroupid = implode( ' ', $thegroupid );
-			$thegroupid = trim( $thegroupid );
+		if ( $this -> setting['setextra'] == 0 ) {
+			if ( is_object( icms::$user ) ) {
+				$uid = icms::$user -> getVar( 'uid' );
+				$getthegroupid = icms::$user -> getGroups( $uid );
+				$thegroupid = array_slice( $getthegroupid, 0, 1 );
+				$thegroupid = implode( ' ', $thegroupid );
+				$thegroupid = trim( $thegroupid );
+			} else {
+				$thegroupid = 3;
+			}
+			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
+			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 		} else {
-			$thegroupid = 3;
+			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_simpletoolset' );
+			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 		}
-
-		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
-		$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
 		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_configs' );
 		$tinycfg_configs = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );

@@ -16,6 +16,7 @@ class XoopsFormTinymce extends icms_form_elements_Textarea {
 	var $_language = _LANGCODE;
 	var $_width = "100%";
 	var $_height = "500px";
+	var $_setextra = 0;
 
 	var $tinymce;
 	var $config = array ( );
@@ -58,19 +59,24 @@ class XoopsFormTinymce extends icms_form_elements_Textarea {
   **/
 	function initTinymce() {
 
-		if ( is_object( icms::$user ) ) {
-			$uid = icms::$user -> getVar( 'uid' );
-			$getthegroupid = icms::$user -> getGroups( $uid );
-			$thegroupid = array_slice( $getthegroupid, 0, 1 );
-			$thegroupid = implode( ' ', $thegroupid );
-			$thegroupid = trim( $thegroupid );
+		if ($this->_setextra == 0 ) {
+			if ( is_object( icms::$user ) ) {
+				$uid = icms::$user -> getVar( 'uid' );
+				$getthegroupid = icms::$user -> getGroups( $uid );
+				$thegroupid = array_slice( $getthegroupid, 0, 1 );
+				$thegroupid = implode( ' ', $thegroupid );
+				$thegroupid = trim( $thegroupid );
+			} else {
+				$thegroupid = 3;
+			} 
+			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
+			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 		} else {
-			$thegroupid = 3;
+			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_simpletoolset' );
+			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 		}
 
-		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
-		$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
-
+		$this->config ["setextra"] = $this->_setextra;
 		$this->config ["elements"] = $this->getName() . '_tarea';
 		$this->config ["language"] = $this->getLanguage ();
 		$this->config ["rootpath"] = $this->rootpath;
