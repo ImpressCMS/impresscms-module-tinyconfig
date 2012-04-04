@@ -24,9 +24,9 @@ global $icmsConfig;
 $modversion = array(
 	'name'				=> 'TinyConfig',
 	'version'			=> 1.0,
-	'status'			=> 'RC-1',
-	'status_version'	=> 'RC-1',
-	'date'				=> '30 March 2012',
+	'status'			=> 'RC-2',
+	'status_version'	=> 'RC-2',
+	'date'				=> '04 April 2012',
 
 	'description'		=> _MI_TINYCFG_DESCRIPTION,
 	'author'			=> 'McDonald',
@@ -53,6 +53,7 @@ $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 // Tables created by sql file (without prefix!)
 $modversion['tables'][0] = 'tinycfg_configs';
 $modversion['tables'][1] = 'tinycfg_toolsets';
+$modversion['tables'][2] = 'tinycfg_simpletoolset';
 
 // Launch additional install script
 $modversion['onInstall'] = '';

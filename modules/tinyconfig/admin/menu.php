@@ -29,6 +29,10 @@ $adminmenu[3]['title'] = _MI_TINYCFG_TOOLSETS;
 $adminmenu[3]['link']  = 'admin/toolsets.php?op=edit';
 $adminmenu[3]['icon']  = 'images/tinycfg_toolbar.png';
 
+$adminmenu[4]['title'] = _MI_TINYCFG_SIMPLETOOLSETS;
+$adminmenu[4]['link']  = 'admin/simpletoolset.php';
+$adminmenu[4]['icon']  = 'images/tinycfg_simpletoolbar.png';
+
 $tinycfgModule = icms_getModuleInfo( basename( dirname( dirname( __FILE__ ) ) ) );
 
 if ( isset( $tinycfgModule ) ) {

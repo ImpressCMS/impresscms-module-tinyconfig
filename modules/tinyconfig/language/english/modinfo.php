@@ -20,5 +20,6 @@ define( '_MI_TINYCFG_DESCRIPTION', 'The module TinyConfig gives you the ability 
 
 define( '_MI_TINYCFG_CONFIG', 'Configure' );
 define( '_MI_TINYCFG_TOOLSETS', 'Toolsets' );
+define( '_MI_TINYCFG_SIMPLETOOLSETS', 'Simple Toolsets' );
 
 ?>

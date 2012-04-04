@@ -18,13 +18,17 @@
 
 define( '_AM_TINYCFG_WARNINSTALL', 'WARNING: Folder %s does not exists on your server. <br />This folder is required by TinyConfig.' );
 
-define( '_AM_TINYCFG_INDEX', '<b>Configure:</b> General configuration of TinyMCE. This applies to all User Groups.<br /><b>Toolsets:</b> Configure the toolsets per User Group.' );
+define( '_AM_TINYCFG_INDEX', '<b>Configure:</b> General configuration of TinyMCE. This applies to all User Groups.<br /><b>Toolsets:</b> Configure the toolsets per User Group.<br /><b>Simple Toolset:</b> Configure a simplified toolset.' );
 
 define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );
 define( '_AM_TINYCFG_TOOLSETS_NOTSET', '<b>This group has no toolset yet!</b><br />The values you see are default values. Please edit and submit the form to create a toolset for this group.' );
-define( '_AM_TINYCFG_TOOLSAVE', 'Toolset for TinyMCE editor have been saved.' );
+define( '_AM_TINYCFG_TOOLSAVE', 'Toolset for TinyMCE editor has been saved.' );
 define( '_AM_TINYCFG_PLUGINSAVAIL', 'Plugins available:' );
+
+define( '_AM_TINYCFG_SIMPLETOOLSETSMCE', 'Simple TinyMCE Toolsets' );
+define( '_AM_TINYCFG_SIMPLETOOLSETSMCEDSC', 'With this form it\'s possible to create simplified toolsets. These simplified toolsets can be used for comments, forums and can\'t be set per User Group.' );
+define( '_AM_TINYCFG_SIMPLETOOLSAVE', 'Simple toolsets for TinyMCE editor has been saved.' );
 
 define( '_AM_TINYCFG_GROUPS', 'Groups' );
 define( '_AM_TINYCFG_GROUPSELECT', 'Select a group' );

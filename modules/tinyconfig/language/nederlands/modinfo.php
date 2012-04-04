@@ -20,5 +20,6 @@ define( '_MI_TINYCFG_DESCRIPTION', 'De module TinyConfig stelt u in staat de WYS
 
 define( '_MI_TINYCFG_CONFIG', 'Configuratie' );
 define( '_MI_TINYCFG_TOOLSETS', 'Taakbalken' );
+define( '_MI_TINYCFG_SIMPLETOOLSETS', 'Simpele taakbalken' );
 
 ?>

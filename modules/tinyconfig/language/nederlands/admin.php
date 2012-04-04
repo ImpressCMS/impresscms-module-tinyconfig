@@ -18,13 +18,17 @@
 
 define( '_AM_TINYCFG_WARNINSTALL', 'WAARSCHUWING: De map %s bestaat niet op uw server.<br />Deze map is nodig voor TinyConfig.' );
 
-define( '_AM_TINYCFG_INDEX', '<b>Configuratie:</b> Algemene configuratie van TinyMCE. Deze configuratie is voor alle Gebruikers Groepen.<br /><b>Taakbalken:</b> Configuratie van de taakbalken per Gebruikers Groep.' );
+define( '_AM_TINYCFG_INDEX', '<b>Configuratie:</b> Algemene configuratie van TinyMCE. Deze configuratie is voor alle Gebruikers Groepen.<br /><b>Taakbalken:</b> Configuratie van de taakbalken per Gebruikers Groep.<br /><b>Simpele Taakbalken:</b> Configureer vereenvoudigde taakbalken.' );
 
 define( '_AM_TINYCFG_TOOLSETS', 'Taakbalken' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Taakbalk' );
 define( '_AM_TINYCFG_TOOLSETS_NOTSET', '<b>Deze groep heeft nog geen taakbalken!</b><br />De waarden die u ziet zijn standaard waarden. Bewerk en sla dit formulier op om een knoppenbalk voor deze groep aan te maken.' );
 define( '_AM_TINYCFG_TOOLSAVE', 'Taakbalken voor de TinyMCE editor zijn opgeslagen.' );
 define( '_AM_TINYCFG_PLUGINSAVAIL', 'Beschikbare plugins:' );
+
+define( '_AM_TINYCFG_SIMPLETOOLSETSMCE', 'Simpele TinyMCE Taakbalken' );
+define( '_AM_TINYCFG_SIMPLETOOLSETSMCEDSC', 'Met dit formulier kunt u eenvoudige taakbalken maken. Deze set eenvoudige taakbalken kunnen bijvoorbeeld gebruikt worden voor de commentaren en de forum modules. Deze taakbalken zijn voor alle gebruikers groepen.' );
+define( '_AM_TINYCFG_SIMPLETOOLSAVE', 'Taakbalken voor de TinyMCE editor zijn opgeslagen.' );
 
 define( '_AM_TINYCFG_GROUPS', 'Groepen' );
 define( '_AM_TINYCFG_GROUPSELECT', 'Selekteer een groep' );
