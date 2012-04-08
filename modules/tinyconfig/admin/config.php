@@ -2,7 +2,7 @@
 /**
 * TinyConfig
 *
-* File: /admin/index.php
+* File: /admin/config.php
 *
 * @copyright	http://www.xoops.org/ The XOOPS Project
 * @copyright	XOOPS_copyrights.txt

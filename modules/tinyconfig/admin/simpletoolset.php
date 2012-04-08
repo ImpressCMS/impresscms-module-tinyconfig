@@ -29,13 +29,15 @@ function simpletoolset_edit() {
 	$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_simpletoolset' );
 	$tinycfg_array = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
-
+	$plugins_default = 'icmsmlcontent,xoopsimagemanager,xoopsquotecode,xoopsemotions,advimage,advlink,emotions,preview,media,contextmenu,paste,fullscreen,visualchars';
+	$buttons1_default = 'bold,italic,underline,strikethrough,separator,fontselect,fontsizeselect,forecolor,backcolor,separator,preview,fullscreen';
+	$buttons2_default = 'xoopsquote,xoopscode,icmsmlcontent,separator,undo,redo,separator,link,unlink,xoopsimagemanager,media,separator,xoopsemotions,separator,pastetext';
 	$fontfamily_default = 'Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Courier New=courier new,courier;Helvetica=helvetica;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
 	$fontsize_default = '1 (8pt)=8pt,2 (10pt)=10pt,3 (12pt)=12pt,4 (14pt)=14pt,5 (18pt)=18pt,6 (24pt)=24pt';
 
-	$plugins		= $tinycfg_array['plugins'] ? htmlspecialchars( $tinycfg_array['plugins'] ) : 'icmsmlcontent,xoopsimagemanager,xoopsquotecode,xoopsemotions,advimage,advlink,emotions,preview,media,contextmenu,paste,fullscreen,visualchars';
-	$buttons1		= $tinycfg_array['buttons1'] ? htmlspecialchars( $tinycfg_array['buttons1'] ) : 'bold,italic,underline,strikethrough,separator,fontselect,fontsizeselect,forecolor,backcolor,separator,preview,fullscreen';
-	$buttons2		= $tinycfg_array['buttons2'] ? htmlspecialchars( $tinycfg_array['buttons2'] ) : 'xoopsquote,xoopscode,icmsmlcontent,separator,undo,redo,separator,link,unlink,xoopsimagemanager,media,separator,xoopsemotions,separator,pastetext';
+	$plugins		= $tinycfg_array['plugins'] ? htmlspecialchars( $tinycfg_array['plugins'] ) : $plugins_default;
+	$buttons1		= $tinycfg_array['buttons1'] ? htmlspecialchars( $tinycfg_array['buttons1'] ) : $buttons1_default;
+	$buttons2		= $tinycfg_array['buttons2'] ? htmlspecialchars( $tinycfg_array['buttons2'] ) : $buttons2_default;
 	$toolbarloc		= $tinycfg_array['toolbarloc'] ? htmlspecialchars( $tinycfg_array['toolbarloc'] ) : 'top';
 	$statusbar		= $tinycfg_array['statusbar'] ? htmlspecialchars( $tinycfg_array['statusbar'] ) : 'bottom';
 	$resize			= $tinycfg_array['resize'] ? htmlspecialchars( $tinycfg_array['resize'] ) : 'true';
