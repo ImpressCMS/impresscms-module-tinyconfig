@@ -20,40 +20,7 @@ define( '_AM_TINYCFG_WARNINSTALL', 'WARNING: Folder %s does not exists on your s
 
 define( '_AM_TINYCFG_INDEX', '<b>Configure:</b> General configuration of TinyMCE. This applies to all User Groups.<br /><b>Toolsets:</b> Configure the toolsets per User Group.<br /><b>Simple Toolset:</b> Configure a simplified toolset.' );
 
-define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
-define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );
-define( '_AM_TINYCFG_TOOLSETS_NOTSET', '<b>This group has no toolset yet!</b><br />The values you see are default values. Please edit and submit the form to create a toolset for this group.' );
-define( '_AM_TINYCFG_TOOLSAVE', 'Toolset for TinyMCE editor has been saved.' );
-define( '_AM_TINYCFG_PLUGINSAVAIL', 'Plugins available:' );
-
-define( '_AM_TINYCFG_SIMPLETOOLSETSMCE', 'Simple TinyMCE Toolsets' );
-define( '_AM_TINYCFG_SIMPLETOOLSETSMCEDSC', 'With this form it\'s possible to create simplified toolsets. These simplified toolsets can be used for comments, forums and can\'t be set per User Group.' );
-define( '_AM_TINYCFG_SIMPLETOOLSAVE', 'Simple toolsets for TinyMCE editor has been saved.' );
-
-define( '_AM_TINYCFG_GROUPS', 'Groups' );
-define( '_AM_TINYCFG_GROUPSELECT', 'Select a group' );
-
-define( '_AM_TINYCFG_PLUGINS', 'Plugins' );
-define( '_AM_TINYCFG_BUTTONB1', 'Button bar 1' );
-define( '_AM_TINYCFG_BUTTONB2', 'Button bar 2' );
-define( '_AM_TINYCFG_BUTTONB3', 'Button bar 3' );
-define( '_AM_TINYCFG_BUTTONB4', 'Button bar 4' );
-define( '_AM_TINYCFG_FONTFAMILY', 'Font family' );
-define( '_AM_TINYCFG_FONTFAMILYDSC', 'This option should contain a semicolon separated list of font titles and font families separated by =. The titles are the ones that get presented to the user in the fonts drop down list and the font family name is the string that gets inserted into the font face or fontFamily CSS style.' );
-define( '_AM_TINYCFG_FONTSIZE', 'Font size' );
-define( '_AM_TINYCFG_FONTSIZEDSC', 'This option should contain a comma separated list of font sizes to include. Each item in the list should be a valid value for the font-style CSS property (10px, 12pt, 1em, etc.).' );
-define( '_AM_TINYCFG_TOOLBARLOC', 'Toolbar location' );
-define( '_AM_TINYCFG_TOOLBARLOCDSC', 'This option enables you to specify where the toolbar should be located. This option can be set to \'top\' or \'bottom\'. Default: <i>top</i>' );
-define( '_AM_TINYCFG_STATUSB', 'Elements statusbar location' );
-define( '_AM_TINYCFG_STATUSBDSC', 'This option enables you to specify where the elements statusbar with the path and resize tool should be located. This option can be set to \'top\', \'bottom\' or \'none\'. Default: <i>bottom</i>' );
-define( '_AM_TINYCFG_RESIZE', 'Resize' );
-define( '_AM_TINYCFG_RESIZEDSC', 'This option gives you the ability to enable/disable the resizing button. This option is only useful if the Elements statusbar location option is set to \'top\' or \'bottom\'.' );
-define( '_AM_TINYCFG_BOTTOM', 'bottom' );
-define( '_AM_TINYCFG_TOP', 'top' );
-define( '_AM_TINYCFG_NONE', 'none' );
-define( '_AM_TINYCFG_TRUE', 'true' );
-define( '_AM_TINYCFG_FALSE', 'false' );
-
+// Configuration
 define( '_AM_TINYCFG_CONFIG', 'Configure' );
 define( '_AM_TINYCFG_CONFIGSAVE', 'Configuration for TinyMCE editor has been saved.' );
 
@@ -78,6 +45,37 @@ define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'This option enables you to make sure tha
 define( '_AM_TINYCFG_SCHEMA', 'Schema' );
 define( '_AM_TINYCFG_SCHEMADSC', 'The schema option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML.<br />Default: <i>HTML4</i>' );
 
+// Toolsets
+define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
+define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );
+define( '_AM_TINYCFG_TOOLSETS_NOTSET', '<b>This group has no toolset yet!</b><br />The values you see are default values. Please edit and submit the form to create a toolset for this group.' );
+define( '_AM_TINYCFG_TOOLSAVE', 'Toolset for TinyMCE editor has been saved.' );
+define( '_AM_TINYCFG_PLUGINSAVAIL', 'Plugins available:' );
+
+define( '_AM_TINYCFG_GROUPS', 'Groups' );
+define( '_AM_TINYCFG_GROUPSELECT', 'Select a group' );
+
+define( '_AM_TINYCFG_PLUGINS', 'Plugins' );
+define( '_AM_TINYCFG_BUTTONB1', 'Button bar 1' );
+define( '_AM_TINYCFG_BUTTONB2', 'Button bar 2' );
+define( '_AM_TINYCFG_BUTTONB3', 'Button bar 3' );
+define( '_AM_TINYCFG_BUTTONB4', 'Button bar 4' );
+
+define( '_AM_TINYCFG_FONTFAMILY', 'Font family' );
+define( '_AM_TINYCFG_FONTFAMILYDSC', 'This option should contain a semicolon separated list of font titles and font families separated by =. The titles are the ones that get presented to the user in the fonts drop down list and the font family name is the string that gets inserted into the font face or fontFamily CSS style.' );
+
+define( '_AM_TINYCFG_FONTSIZE', 'Font size' );
+define( '_AM_TINYCFG_FONTSIZEDSC', 'This option should contain a comma separated list of font sizes to include. Each item in the list should be a valid value for the font-style CSS property (10px, 12pt, 1em, etc.).' );
+
+define( '_AM_TINYCFG_TOOLBARLOC', 'Toolbar location' );
+define( '_AM_TINYCFG_TOOLBARLOCDSC', 'This option enables you to specify where the toolbar should be located. This option can be set to \'top\' or \'bottom\'. Default: <i>top</i>' );
+
+define( '_AM_TINYCFG_STATUSB', 'Elements statusbar location' );
+define( '_AM_TINYCFG_STATUSBDSC', 'This option enables you to specify where the elements statusbar with the path and resize tool should be located. This option can be set to \'top\', \'bottom\' or \'none\'. Default: <i>bottom</i>' );
+
+define( '_AM_TINYCFG_RESIZE', 'Resize' );
+define( '_AM_TINYCFG_RESIZEDSC', 'This option gives you the ability to enable/disable the resizing button. This option is only useful if the Elements statusbar location option is set to \'top\' or \'bottom\'.' );
+
 define( '_AM_TINYCFG_SKIN', 'Select skin' );
 define( '_AM_TINYCFG_SKINDSC', '' );
 define( '_AM_TINYCFG_SKIN_DEFAULT', 'Default' );
@@ -88,5 +86,16 @@ define( '_AM_TINYCFG_SKINVAR', 'Select skin variant' );
 define( '_AM_TINYCFG_SKINVARDSC', 'The skin variant applies to the O2K7 skin only.' );
 define( '_AM_TINYCFG_SKINVAR_BLACK', 'Black' );
 define( '_AM_TINYCFG_SKINVAR_SILVER', 'Silver' );
+
+define( '_AM_TINYCFG_BOTTOM', 'bottom' );
+define( '_AM_TINYCFG_TOP', 'top' );
+define( '_AM_TINYCFG_NONE', 'none' );
+define( '_AM_TINYCFG_TRUE', 'true' );
+define( '_AM_TINYCFG_FALSE', 'false' );
+
+// Simple Toolsets
+define( '_AM_TINYCFG_SIMPLETOOLSETSMCE', 'Simple TinyMCE Toolsets' );
+define( '_AM_TINYCFG_SIMPLETOOLSETSMCEDSC', 'With this form it\'s possible to create simplified toolsets. These simplified toolsets can be used for comments, forums and can\'t be set per User Group.' );
+define( '_AM_TINYCFG_SIMPLETOOLSAVE', 'Simple toolsets for TinyMCE editor has been saved.' );
 
 ?>
