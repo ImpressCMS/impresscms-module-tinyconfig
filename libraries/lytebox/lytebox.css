@@ -15,10 +15,10 @@
 }
 #lbTopContainer { overflow: hidden; margin-top: 5px; }
 #lbTopContainer.black, #lbBottomContainer.black { background-color: #000000; }
-#lbTopContainer.grey, #lbBottomContainer.grey, {
+#lbTopContainer.grey, #lbBottomContainer.grey {
 	background-color: #ffffff;
 }
-	
+
 #lbImage, #lbIframe { border: none; }
 #lbImage.black, #lbIframe.black { border: 1px solid #CCCCCC; }
 	#lbImage.grey, #lbIframe.grey { border: 1px solid #888888; }
@@ -86,7 +86,7 @@
 /* Lytetip */
 * html a:hover { background: transparent; }
 
-.lytetip { outline: none; border-bottom: 1px dotted; z-index:24; text-decoration:none; }
+.lytetip { outline: none; border-bottom: 1px dotted; text-decoration:none; }
 .lytetip span {
 	color: #000000;
 	position: absolute;
@@ -106,7 +106,7 @@
 	display: none;
 }
 
-.lytetip:hover { z-index:25; color: #aaaaff; background:; text-decoration: none; }
+.lytetip:hover { z-index:25; color: #aaaaff; text-decoration: none; }
 .lytetip:hover span { display: block; }
 .lytetip:hover em {	font-size: 1.2em; font-weight: bold; display: block; padding: 0 0 0.6em 0; }
 .lytetip:hover .lbTipImg { border: 0; margin: -20px 0 0 -36px; float: left; position: absolute; height: 32px; width: 32px; }
