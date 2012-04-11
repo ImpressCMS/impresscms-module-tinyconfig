@@ -1,4 +1,10 @@
 ===========
+Version 1.1
+===========
+- Modified form for 'Forced root block'
+- Removed z-index for tool tips from Lytebox library
+
+===========
 Version 1.0
 ===========
 
