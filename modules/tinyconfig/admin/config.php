@@ -34,7 +34,7 @@ function config_edit() {
 	$relativeurls	= $tinycfg_array['relativeurls'] ? htmlspecialchars( $tinycfg_array['relativeurls'] ) : 'false';
 	$forcebr		= $tinycfg_array['forcebr'] ? htmlspecialchars( $tinycfg_array['forcebr'] ) : 'false';
 	$forcep			= $tinycfg_array['forcep'] ? htmlspecialchars( $tinycfg_array['forcep'] ) : 'true';
-	$forcedrootblock= $tinycfg_array['forcedrootblock'] ? htmlspecialchars( $tinycfg_array['forcedrootblock'] ) : 'p';
+	$forcedrootblock= $tinycfg_array['forcedrootblock'] ? htmlspecialchars( $tinycfg_array['forcedrootblock'] ) : 'p-tag';
 	$sschema		= $tinycfg_array['sschema'] ? htmlspecialchars( $tinycfg_array['sschema'] ) : 'html4';
 
 	icms_cp_header();
@@ -73,8 +73,10 @@ function config_edit() {
 	$forcep_select -> addOptionArray( $forcep_array );
 	$sform -> addElement( $forcep_select );
 
-	$forcedrootblck = new icms_form_elements_Text( _AM_TINYCFG_FORCEDRTBLCK . tinycfg_tooltip( _AM_TINYCFG_FORCEDRTBLCKDSC, 'help' ), 'forcedrootblock', 5, 1, $forcedrootblock );
-	$sform -> addElement( $forcedrootblck );
+	$forcedrootblck_array = array( '' => _NONE, 'p' => _AM_TINYCFG_PTAG );
+	$forcedrootblck_select = new icms_form_elements_Select( _AM_TINYCFG_FORCEDRTBLCK . tinycfg_tooltip( _AM_TINYCFG_FORCEDRTBLCKDSC, 'help' ), 'forcedrootblock', $forcedrootblock );
+	$forcedrootblck_select -> addOptionArray( $forcedrootblck_array );
+	$sform -> addElement( $forcedrootblck_select );
 
 	$schema_array = array( 'html4' => 'HTML4', 'html5' => 'HTML5' );
 	$schema_select = new icms_form_elements_Select( _AM_TINYCFG_SCHEMA . tinycfg_tooltip( _AM_TINYCFG_SCHEMADSC, 'help' ), 'sschema', $sschema );

@@ -40,7 +40,8 @@ define( '_AM_TINYCFG_FORCEP', 'Forceer P elementen' );
 define( '_AM_TINYCFG_FORCEPDSC', 'Als de gekozen optie <i>Ja</i> is, dan zullen P elementen gegenereert worden bij aanslag van de Enter toets en BR elementen bij Shift+Enter toets.<br />Standaard: <i>ja</i>' );
 
 define( '_AM_TINYCFG_FORCEDRTBLCK', 'Forceer root blok' );
-define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'Met deze optie kuntt u ervoor zorgen dat alle niet blok elementen of tekstnodes zijn verpakt in blok-elementen.<br />Standaard: <i>p</i>' );
+define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'Met deze optie kuntt u ervoor zorgen dat alle niet blok elementen of tekstnodes zijn verpakt in blok-elementen.<br />Standaard: <i>p-tag</i>' );
+define( '_AM_TINYCFG_PTAG', 'p-tag' );
 
 define( '_AM_TINYCFG_SCHEMA', 'Schema' );
 define( '_AM_TINYCFG_SCHEMADSC', 'Deze optie laat u kiezen tussen HTML4 en HTML5 schema. Dit regelt de geldige elementen en attributen die kunnen worden geplaatst in de HTML. <br />Standaard: <i>HTML4</i>' );

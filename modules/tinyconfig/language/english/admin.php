@@ -40,7 +40,8 @@ define( '_AM_TINYCFG_FORCEP', 'Force P elements' );
 define( '_AM_TINYCFG_FORCEPDSC', 'This option enables you to disable/enable the creation of paragraphs on return/enter in Mozilla/Firefox..<br />Default: <i>true</i>' );
 
 define( '_AM_TINYCFG_FORCEDRTBLCK', 'Forced root block' );
-define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'This option enables you to make sure that any non block elements or text nodes are wrapped in block elements.<br />Default: <i>p</i>' );
+define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'This option enables you to make sure that any non block elements or text nodes are wrapped in block elements.<br />Default: <i>p-tag</i>' );
+define( '_AM_TINYCFG_PTAG', 'p-tag' );
 
 define( '_AM_TINYCFG_SCHEMA', 'Schema' );
 define( '_AM_TINYCFG_SCHEMADSC', 'The schema option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML.<br />Default: <i>HTML4</i>' );
