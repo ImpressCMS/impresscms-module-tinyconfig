@@ -46,6 +46,9 @@ define( '_AM_TINYCFG_PTAG', 'p-tag' );
 define( '_AM_TINYCFG_SCHEMA', 'Schema' );
 define( '_AM_TINYCFG_SCHEMADSC', 'The schema option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML.<br />Default: <i>HTML4</i>' );
 
+define( '_AM_TINYCFG_CONTENTCSS', 'Enter path to CSS for editable area' );
+define( '_AM_TINYCFG_CONTENTCSSDSC', 'This option enables you to specify a custom CSS file that extends the theme content CSS. This CSS file is the one used within the editor (the editable area).<br />Enter the path to the CSS file as <i>folder/folder/folder/tinymce_content.css</i> (without a trailing slash at the start).' );
+
 // Toolsets
 define( '_AM_TINYCFG_TOOLSETS', 'Toolsets' );
 define( '_AM_TINYCFG_TOOLSETSMCE', 'TinyMCE Toolset' );

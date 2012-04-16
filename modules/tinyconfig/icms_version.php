@@ -58,7 +58,7 @@ $modversion['tables'][2] = 'tinycfg_simpletoolset';
 
 // Launch additional install script
 $modversion['onInstall'] = '';
-$modversion['onUpdate']  = '';
+$modversion['onUpdate']  = 'admin/update.php';
 
 // Admin things
 $modversion['hasAdmin'] = 1;

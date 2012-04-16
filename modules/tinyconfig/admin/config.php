@@ -36,6 +36,7 @@ function config_edit() {
 	$forcep			= $tinycfg_array['forcep'] ? htmlspecialchars( $tinycfg_array['forcep'] ) : 'true';
 	$forcedrootblock= $tinycfg_array['forcedrootblock'] ? htmlspecialchars( $tinycfg_array['forcedrootblock'] ) : 'p-tag';
 	$sschema		= $tinycfg_array['sschema'] ? htmlspecialchars( $tinycfg_array['sschema'] ) : 'html4';
+	$contentcss		= $tinycfg_array['contentcss'] ? htmlspecialchars( $tinycfg_array['contentcss'] ) : '';
 
 	icms_cp_header();
 	icms::$module -> displayAdminMenu( 2, _AM_TINYCFG_CONFIG . ' | TinyConfig' );
@@ -82,6 +83,8 @@ function config_edit() {
 	$schema_select = new icms_form_elements_Select( _AM_TINYCFG_SCHEMA . tinycfg_tooltip( _AM_TINYCFG_SCHEMADSC, 'help' ), 'sschema', $sschema );
 	$schema_select -> addOptionArray( $schema_array );
 	$sform -> addElement( $schema_select );
+	
+	$sform -> addElement( new icms_form_elements_Text( _AM_TINYCFG_CONTENTCSS . tinycfg_tooltip( _AM_TINYCFG_CONTENTCSSDSC, 'help' ), 'contentcss', 70, 128, $contentcss ) );
 
 	$button_tray = new icms_form_elements_Tray( '', '' );
 	$hidden = new icms_form_elements_Hidden( 'op', 'save' );
@@ -112,8 +115,9 @@ switch ( strtolower( $op ) ) {
 		$forcep			= addslashes( trim( $_POST['forcep'] ) );
 		$forcedrootblock= addslashes( trim( $_POST['forcedrootblock'] ) );
 		$sschema			= addslashes( trim( $_POST['sschema'] ) );
+		$contentcss		= addslashes( trim( $_POST['contentcss'] ) );
 
-		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', sschema='$sschema'";
+		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', sschema='$sschema', contentcss='$contentcss'";
 		$result = icms::$xoopsDB -> queryF( $sql );
 		$error = 'DBERROR' . ': <br /><br />' . $sql;
 		if ( !$result ) {
