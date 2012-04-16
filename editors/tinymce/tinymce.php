@@ -113,10 +113,10 @@ class TinyMCE {
 		$this->setting["plugins"] .= !empty($this->config["plugins"]) ? ",".$this->config["plugins"] : "";
 		$configured[] = "plugins";
 
-		$this->setting["content_css"] = @$this->config["content_css"] ? $this->config["content_css"] : "editor_xoops.css";
+	/*	$this->setting["content_css"] = @$this->config["content_css"] ? $this->config["content_css"] : "editor_xoops.css";
 		if (!is_readable(ICMS_ROOT_PATH . $this->rootpath. '/themes/'.$this->setting["theme"].'/css/' .$this->setting["content_css"])) {
 			unset( $this->setting["content_css"] );
-		}
+		} */
 		$easiestml_exist = ($icmsConfigMultilang['ml_enable'] == true && defined('EASIESTML_LANGS') && defined('EASIESTML_LANGNAMES'));
 		if ($this->setting["theme"] == "advanced") {
 			$this->setting["theme_advanced_buttons1"] = $tinycfg_tools['buttons1'];
@@ -274,10 +274,14 @@ class TinyMCE {
 		$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_configs' );
 		$tinycfg_configs = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
-		if ( $tinycfg_tools['skinvariant'] == 'none' ) { 
-			$skinvariant = '';
-		} else {
+		$skinvariant = '';
+		if ( !( $tinycfg_tools['skinvariant'] == 'none' ) ) { 
 			$skinvariant = $tinycfg_tools['skinvariant'];
+		}
+
+		$content_css = '';
+		if ( is_file( ICMS_ROOT_PATH . '/' . $tinycfg_configs['contentcss'] ) ) { 
+			$content_css = 'content_css : "' . $tinycfg_configs['contentcss'] . '",';
 		}
 
 		$ret .= '
@@ -292,6 +296,7 @@ class TinyMCE {
 		force_p_newlines : ' . $tinycfg_configs['forcep'] . ',
 		forced_root_block : "' . $tinycfg_configs['forcedrootblock'] . '",
 		schema : "' . $tinycfg_configs['sschema'] . '",
+		' . $content_css . '
 		tinymceload : "1"});
 		'.$callback.'
 		function showMCE(id) {
