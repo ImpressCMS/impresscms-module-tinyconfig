@@ -182,7 +182,7 @@ switch ( strtolower( $op ) ) {
 		$tinycfg_gid	= $_POST['tinycfg_gid'];
 
 		if ( !$tinycfg_id ) {
-			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, buttons4, toolbarloc, statusbar, resize, fontfamily, fontsize)";
+			$sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . "(tinycfg_id, tinycfg_gid, plugins, buttons1, buttons2, buttons3, buttons4, toolbarloc, statusbar, resize, fontfamily, fontsize, skin, skinvariant)";
 			$sql .= " VALUES ('', '$tinycfg_gid', '$plugins', '$buttons1', '$buttons2', '$buttons3', '$buttons4', '$toolbarloc', '$statusbar', '$resize', '$fontfamily', '$fontsize', '$skin', '$skinvariant')";
 		} else {
 			$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . " SET plugins='$plugins', buttons1='$buttons1', buttons2='$buttons2', buttons3='$buttons3', buttons4='$buttons4', toolbarloc='$toolbarloc', statusbar='$statusbar', resize='$resize', fontfamily='$fontfamily', fontsize='$fontsize', skin='$skin', skinvariant='$skinvariant' WHERE tinycfg_gid = " . $tinycfg_gid;

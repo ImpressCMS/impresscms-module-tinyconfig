@@ -83,7 +83,7 @@ function config_edit() {
 	$schema_select = new icms_form_elements_Select( _AM_TINYCFG_SCHEMA . tinycfg_tooltip( _AM_TINYCFG_SCHEMADSC, 'help' ), 'sschema', $sschema );
 	$schema_select -> addOptionArray( $schema_array );
 	$sform -> addElement( $schema_select );
-	
+
 	$sform -> addElement( new icms_form_elements_Text( _AM_TINYCFG_CONTENTCSS . tinycfg_tooltip( _AM_TINYCFG_CONTENTCSSDSC, 'help' ), 'contentcss', 70, 128, $contentcss ) );
 
 	$button_tray = new icms_form_elements_Tray( '', '' );
@@ -114,7 +114,7 @@ switch ( strtolower( $op ) ) {
 		$forcebr		= addslashes( trim( $_POST['forcebr'] ) );
 		$forcep			= addslashes( trim( $_POST['forcep'] ) );
 		$forcedrootblock= addslashes( trim( $_POST['forcedrootblock'] ) );
-		$sschema			= addslashes( trim( $_POST['sschema'] ) );
+		$sschema		= addslashes( trim( $_POST['sschema'] ) );
 		$contentcss		= addslashes( trim( $_POST['contentcss'] ) );
 
 		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', sschema='$sschema', contentcss='$contentcss'";
