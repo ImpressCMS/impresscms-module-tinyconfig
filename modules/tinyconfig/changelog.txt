@@ -5,6 +5,7 @@ Version 1.1
 - Removed z-index for tool tips from Lytebox library
 - Added form for custom CSS for editable area of editor
 - Toolsets for additional user groups couldn't be saved
+- Modified formtinymce.php and tinymce.php to work without TinyConfig
 
 ===========
 Version 1.0
