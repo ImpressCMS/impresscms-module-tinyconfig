@@ -59,35 +59,45 @@ class XoopsFormTinymce extends icms_form_elements_Textarea {
   **/
 	function initTinymce() {
 
-		if ($this->_setextra == 0 ) {
-			if ( is_object( icms::$user ) ) {
-				$uid = icms::$user -> getVar( 'uid' );
-				$getthegroupid = icms::$user -> getGroups( $uid );
-				$thegroupid = array_slice( $getthegroupid, 0, 1 );
-				$thegroupid = implode( ' ', $thegroupid );
-				$thegroupid = trim( $thegroupid );
-			} else {
-				$thegroupid = 3;
-			} 
-			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
-			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
-		} else {
-			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_simpletoolset' );
-			$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
-		}
+		static $tinyconfig_included;
+		if ( !isset( $tinyconfig_included ) ) {
+			$modules_handler = icms::handler( 'icms_module' );
+			$tinyconfig_mod = $modules_handler -> getByDirName( 'tinyconfig' );
+			if ( $tinyconfig_mod && $tinyconfig_mod -> getVar( 'isactive' ) == 1 ) {
+				if ($this->_setextra == 0 ) {
+					if ( is_object( icms::$user ) ) {
+						$uid = icms::$user -> getVar( 'uid' );
+						$getthegroupid = icms::$user -> getGroups( $uid );
+						$thegroupid = array_slice( $getthegroupid, 0, 1 );
+						$thegroupid = implode( ' ', $thegroupid );
+						$thegroupid = trim( $thegroupid );
+					} else {
+						$thegroupid = 3;
+					} 
+					$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_toolsets' ) . ' WHERE tinycfg_gid=' . $thegroupid;
+					$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
+				} else {
+					$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'tinycfg_simpletoolset' );
+					$tinycfg_tools = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
+				}
 
+				$this->config ["fonts"] = $tinycfg_tools['fontfamily'];
+				$this->config ["font_sizes"] = $tinycfg_tools['fontsize'];
+				$this->config ["statusbar_location"] = $tinycfg_tools['statusbar'];
+				if ( $tinycfg_tools['resize'] == 'true' ) {
+					$this->config ["resizing"] = "true";
+				}
+			} else {
+				$this->config ["fonts"] = $this->getFonts ();
+			}
+		}
 		$this->config ["setextra"] = $this->_setextra;
 		$this->config ["elements"] = $this->getName() . '_tarea';
 		$this->config ["language"] = $this->getLanguage ();
 		$this->config ["rootpath"] = $this->rootpath;
 		$this->config ["area_width"] = $this->_width;
 		$this->config ["area_height"] = $this->_height;
-		$this->config ["fonts"] = $tinycfg_tools['fontfamily'];
-		$this->config ["font_sizes"] = $tinycfg_tools['fontsize'];
-		$this->config ["statusbar_location"] = $tinycfg_tools['statusbar'];
-		if ( $tinycfg_tools['resize'] == 'true' ) {
-			$this->config ["resizing"] = "true";
-		}
+		
 
 		require_once dirname ( __FILE__ ) . "/tinymce.php";
 		$this->tinymce = TinyMCE::instance( $this->config );
