@@ -86,7 +86,7 @@
 /* Lytetip */
 * html a:hover { background: transparent; }
 
-.lytetip { outline: none; border-bottom: 1px dotted; text-decoration:none; }
+.lytetip { outline: none; border-bottom: 1px dotted; text-decoration:none; z-index: 2; }
 .lytetip span {
 	color: #000000;
 	position: absolute;
