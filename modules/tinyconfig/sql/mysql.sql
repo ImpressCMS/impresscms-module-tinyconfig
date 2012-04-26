@@ -12,12 +12,13 @@ CREATE TABLE `tinycfg_configs` (
 	`relativeurls` varchar(128) NOT NULL default 'false',
 	`forcebr` varchar(128) NOT NULL default 'false',
 	`forcep` varchar(128) NOT NULL default 'true',
+	`fixlist` varchar(128) NOT NULL default 'false',
 	`forcedrootblock` varchar(128) NOT NULL default 'p',
 	`sschema` varchar(128) NOT NULL default 'html4',
 	`contentcss` varchar(128) NOT NULL default ''
 );
 
-INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,forcebr,forcep,forcedrootblock,sschema) VALUES ('false','false','false','false','true','p','html4');
+INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,forcebr,forcep,fixlist,forcedrootblock,sschema) VALUES ('false','false','false','false','true','false','p','html4');
 
 
 #

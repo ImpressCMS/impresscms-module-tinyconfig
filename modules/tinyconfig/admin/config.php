@@ -34,6 +34,7 @@ function config_edit() {
 	$relativeurls	= $tinycfg_array['relativeurls'] ? htmlspecialchars( $tinycfg_array['relativeurls'] ) : 'false';
 	$forcebr		= $tinycfg_array['forcebr'] ? htmlspecialchars( $tinycfg_array['forcebr'] ) : 'false';
 	$forcep			= $tinycfg_array['forcep'] ? htmlspecialchars( $tinycfg_array['forcep'] ) : 'true';
+	$fixlist		= $tinycfg_array['fixlist'] ? htmlspecialchars( $tinycfg_array['fixlist'] ) : 'true';
 	$forcedrootblock= $tinycfg_array['forcedrootblock'] ? htmlspecialchars( $tinycfg_array['forcedrootblock'] ) : 'p-tag';
 	$sschema		= $tinycfg_array['sschema'] ? htmlspecialchars( $tinycfg_array['sschema'] ) : 'html4';
 	$contentcss		= $tinycfg_array['contentcss'] ? htmlspecialchars( $tinycfg_array['contentcss'] ) : '';
@@ -73,6 +74,11 @@ function config_edit() {
 	$forcep_select = new icms_form_elements_Select( _AM_TINYCFG_FORCEP . tinycfg_tooltip( _AM_TINYCFG_FORCEPDSC, 'help' ), 'forcep', $forcep );
 	$forcep_select -> addOptionArray( $forcep_array );
 	$sform -> addElement( $forcep_select );
+
+	$fixlist_array = array( 'false' => _AM_TINYCFG_FALSE, 'true' => _AM_TINYCFG_TRUE );
+	$fixlist_select = new icms_form_elements_Select( _AM_TINYCFG_FIXLIST . tinycfg_tooltip( _AM_TINYCFG_FIXLISTDSC, 'help' ), 'fixlist', $fixlist );
+	$fixlist_select -> addOptionArray( $fixlist_array );
+	$sform -> addElement( $fixlist_select );
 
 	$forcedrootblck_array = array( '' => _NONE, 'p' => _AM_TINYCFG_PTAG );
 	$forcedrootblck_select = new icms_form_elements_Select( _AM_TINYCFG_FORCEDRTBLCK . tinycfg_tooltip( _AM_TINYCFG_FORCEDRTBLCKDSC, 'help' ), 'forcedrootblock', $forcedrootblock );
@@ -114,10 +120,11 @@ switch ( strtolower( $op ) ) {
 		$forcebr		= addslashes( trim( $_POST['forcebr'] ) );
 		$forcep			= addslashes( trim( $_POST['forcep'] ) );
 		$forcedrootblock= addslashes( trim( $_POST['forcedrootblock'] ) );
+		$fixlist		= addslashes( trim( $_POST['fixlist'] ) );
 		$sschema		= addslashes( trim( $_POST['sschema'] ) );
 		$contentcss		= addslashes( trim( $_POST['contentcss'] ) );
 
-		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', sschema='$sschema', contentcss='$contentcss'";
+		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', forcebr='$forcebr', forcep='$forcep', forcedrootblock='$forcedrootblock', fixlist='$fixlist', sschema='$sschema', contentcss='$contentcss'";
 		$result = icms::$xoopsDB -> queryF( $sql );
 		$error = 'DBERROR' . ': <br /><br />' . $sql;
 		if ( !$result ) {

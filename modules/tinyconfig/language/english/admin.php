@@ -37,7 +37,10 @@ define( '_AM_TINYCFG_FORCEBR', 'Force BR elements' );
 define( '_AM_TINYCFG_FORCEBRDSC', 'If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs.<br />Default: <i>false</i>' );
 
 define( '_AM_TINYCFG_FORCEP', 'Force P elements' );
-define( '_AM_TINYCFG_FORCEPDSC', 'This option enables you to disable/enable the creation of paragraphs on return/enter in Mozilla/Firefox..<br />Default: <i>true</i>' );
+define( '_AM_TINYCFG_FORCEPDSC', 'This option enables you to disable/enable the creation of paragraphs on return/enter in Mozilla/Firefox.<br />Default: <i>true</i>' );
+
+define( '_AM_TINYCFG_FIXLIST', 'Fix list elements' );
+define( '_AM_TINYCFG_FIXLISTDSC', 'This option enables you to specify that list elements UL/OL is to be converted to valid XHTML.<br />Default: <i>false</i>' );
 
 define( '_AM_TINYCFG_FORCEDRTBLCK', 'Forced root block' );
 define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'This option enables you to make sure that any non block elements or text nodes are wrapped in block elements.<br />Default: <i>p-tag</i>' );

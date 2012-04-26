@@ -2,10 +2,11 @@
 Version 1.1
 ===========
 - Modified form for 'Forced root block'
-- Removed z-index for tool tips from Lytebox library
+- Adjusted z-index for tool tips from Lytebox library
 - Added form for custom CSS for editable area of editor
 - Toolsets for additional user groups couldn't be saved
 - Modified formtinymce.php and tinymce.php to work without TinyConfig
+- Added 'Fix list elements' option to configuration
 
 ===========
 Version 1.0

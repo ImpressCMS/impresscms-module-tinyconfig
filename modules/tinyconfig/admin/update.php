@@ -32,8 +32,9 @@ if ( !defined( 'ICMS_ROOT_PATH' ) ) { die( 'ICMS root path not defined' ); }
 $ref = xoops_getenv( 'HTTP_REFERER' );
 
 if( $ref == '' || strpos( $ref , ICMS_URL . '/modules/system/admin.php' ) === 0 ) {
-
 		$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'tinycfg_configs') . " ADD COLUMN contentcss VARCHAR(1128) NOT NULL default ''";
+		if ( !mysql_query( $sql ) ) {}
+		$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'tinycfg_configs') . " ADD COLUMN fixlist VARCHAR(128) NOT NULL default 'false' AFTER forcep";
 		if ( !mysql_query( $sql ) ) {}
 }
 ?>

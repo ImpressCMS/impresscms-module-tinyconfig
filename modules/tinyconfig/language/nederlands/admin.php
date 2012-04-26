@@ -39,6 +39,9 @@ define( '_AM_TINYCFG_FORCEBRDSC', 'Deze optie forceert de uitvoer van BR element
 define( '_AM_TINYCFG_FORCEP', 'Forceer P elementen' );
 define( '_AM_TINYCFG_FORCEPDSC', 'Als de gekozen optie <i>Ja</i> is, dan zullen P elementen gegenereert worden bij aanslag van de Enter toets en BR elementen bij Shift+Enter toets.<br />Standaard: <i>ja</i>' );
 
+define( '_AM_TINYCFG_FIXLIST', 'Repareer lijst elementen' );
+define( '_AM_TINYCFG_FIXLISTDSC', 'Met deze optie kunt u specificeren dat lijst elementen UL/OL omgezet worden nar correcte XHTML.<br />Standaard: <i>false</i>' );
+
 define( '_AM_TINYCFG_FORCEDRTBLCK', 'Forceer root blok' );
 define( '_AM_TINYCFG_FORCEDRTBLCKDSC', 'Met deze optie kunt u ervoor zorgen dat alle niet blok elementen of tekstnodes zijn verpakt in blok-elementen.<br />Standaard: <i>p-tag</i>' );
 define( '_AM_TINYCFG_PTAG', 'p-tag' );
