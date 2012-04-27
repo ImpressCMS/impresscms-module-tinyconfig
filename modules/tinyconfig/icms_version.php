@@ -26,7 +26,7 @@ $modversion = array(
 	'version'			=> 1.1,
 	'status'			=> 'Trunk',
 	'status_version'	=> 'Trunk',
-	'date'				=> 'xx Xxxxx 2012',
+	'date'				=> 'xx xxxxx 2012',
 
 	'description'		=> _MI_TINYCFG_DESCRIPTION,
 	'author'			=> 'McDonald',
@@ -42,6 +42,9 @@ $modversion = array(
 // ** Contributors **
 $modversion['people']['developers'] []	= '<a href="http://community.impresscms.org/userinfo.php?uid=179" target="_blank">McDonald</a>';
 $modversion['people']['other'][]		= 'Moxiecode AB (icon & text tooltips)';
+
+$modversion['people']['translators'][] = '&middot; <a href="http://community.impresscms.org/userinfo.php?uid=97" target="_blank">debianus</a> (Spanish)';
+$modversion['people']['translators'][] = '&middot; <a href="http://community.impresscms.org/userinfo.php?uid=179" target="_blank">McDonald</a>  (Dutch)';
 
 $modversion['manual']['wiki'][] = '<a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE Configuration</a>';
 
