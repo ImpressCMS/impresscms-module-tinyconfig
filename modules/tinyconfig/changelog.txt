@@ -1,0 +1,16 @@
+===========
+Version 1.1
+===========
+- Modified form for 'Forced root block'
+- Modified formtinymce.php and tinymce.php to work without TinyConfig
+- Adjusted z-index for tool tips from Lytebox library
+- Toolsets for additional user groups couldn't be saved
+- Added form for custom CSS for editable area of editor
+- Added 'Fix list elements' option to configuration
+- Added Spanish language files [debianus]
+
+===========
+Version 1.0
+===========
+
+First version of TinyConfig
