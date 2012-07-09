@@ -13,7 +13,7 @@
 * 				TinyConfig
 * @since		1.00
 * @author		McDonald
-* @translator		debianus
+* @translator	debianus
 * @version		$Id$
 */
 
