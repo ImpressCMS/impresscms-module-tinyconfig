@@ -33,12 +33,6 @@ define( '_AM_TINYCFG_CONVERTURLSDSC', 'This option enables you to control whethe
 define( '_AM_TINYCFG_RELATIVEURLS', 'Relative URLs' );
 define( '_AM_TINYCFG_RELATIVEURLSDSC', 'If this option is set to true, all URLs returned from the Image Manager will be relative from ' . ICMS_URL . '. If it\'s set to false all URLs will be converted to absolute URLs.<br />Default: <i>false</i>' );
 
-define( '_AM_TINYCFG_FORCEBR', 'Force BR elements' );
-define( '_AM_TINYCFG_FORCEBRDSC', 'If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs.<br />Default: <i>false</i>' );
-
-define( '_AM_TINYCFG_FORCEP', 'Force P elements' );
-define( '_AM_TINYCFG_FORCEPDSC', 'This option enables you to disable/enable the creation of paragraphs on return/enter in Mozilla/Firefox.<br />Default: <i>true</i>' );
-
 define( '_AM_TINYCFG_FIXLIST', 'Fix list elements' );
 define( '_AM_TINYCFG_FIXLISTDSC', 'This option enables you to specify that list elements UL/OL is to be converted to valid XHTML.<br />Default: <i>false</i>' );
 
@@ -105,4 +99,8 @@ define( '_AM_TINYCFG_SIMPLETOOLSETSMCE', 'Simple TinyMCE Toolsets' );
 define( '_AM_TINYCFG_SIMPLETOOLSETSMCEDSC', 'With this form it\'s possible to create simplified toolsets. These simplified toolsets can be used for comments, forums and can\'t be set per User Group.' );
 define( '_AM_TINYCFG_SIMPLETOOLSAVE', 'Simple toolsets for TinyMCE editor has been saved.' );
 
+// TinyConfig 2.0
+define( '_AM_TINYCFG_BRINPRE', 'BR tag within PRE tag option' );
+define( '_AM_TINYCFG_BRINPREDSC', 'This option is enabled by default and changes the behavior on how the enter key is used within a pre tag. Since most pre tags are used for things like code examples it made more sense to produce a BR on enter by default and only split pre tags when hitting shift+enter. If you don\'t want this new behavior you can set the br_in_pre to false.<br />Default: <i>true</i>' );
+define( '_AM_TINYCFG_BRTAG', 'br-tag' );
 ?>

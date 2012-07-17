@@ -1,4 +1,11 @@
 ===========
+Version 2.0
+===========
+- Modified for TinyMCE 3.5.x
+- Removed force_br_newlines/force_p_newlines options
+- Added br_in_pre option to configuration
+
+===========
 Version 1.1
 ===========
 - Modified form for 'Forced root block'

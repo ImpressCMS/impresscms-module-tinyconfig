@@ -35,11 +35,11 @@ Convert URLs: false
 
 Relative URLs: false
 
-Force BR elements: false
+BR tag within PRE tag option: true
 
-Force P elements: true
+Fix list elements: false
 
-Forced root block: p
+Forced root block: p-tag
 
 Schema: HTML4
 

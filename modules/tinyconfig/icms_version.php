@@ -23,7 +23,7 @@ global $icmsConfig;
 // ** General information
 $modversion = array(
 	'name'				=> 'TinyConfig',
-	'version'			=> 1.1,
+	'version'			=> 2.0,
 	'status'			=> 'Trunk',
 	'status_version'	=> 'Trunk',
 	'date'				=> 'xx xxxxx 2012',
