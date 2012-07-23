@@ -435,7 +435,7 @@ class TinyMCE {
 					convert_urls : false,
 					relative_urls : false,
 					remove_script_host : false,
-					force_br_newlines : false,
+					forced_root_block : "p",
 					tinymceload : "1"});
 					'.$callback.'
 					function showMCE(id) {
