@@ -22,7 +22,7 @@ class TinyMCE {
 	 */
 	function __construct($config) {
 		$this->setConfig($config);
-		$this->rootpath = $this->config["rootpath"] . "/jscripts";
+		$this->rootpath = $this->config["rootpath"] . "/jscripts/tiny_mce";
 	}
 
 	/*
