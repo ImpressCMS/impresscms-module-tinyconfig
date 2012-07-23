@@ -2,9 +2,9 @@
 Installation of TinyConfig
 ==========================
 
-Upload the folders from the download package to your server.
-This will overwrite the files editors/tinymce/formtinymce.php and editors/tinymce/tinymce.php.
-Install TinyConfig from the Module Administration like any other ICMS module.
+1. Delete the folder editors/tinymce
+2. Upload the folders from the download package to your server.
+3. Install TinyConfig from the Module Administration like any other ICMS module.
 
 
 
