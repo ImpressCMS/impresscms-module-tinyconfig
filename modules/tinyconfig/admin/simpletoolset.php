@@ -49,7 +49,7 @@ function simpletoolset_edit() {
 	echo '<div style="border: 1px solid #D9D9D9; border-radius: 4px; margin-bottom: 10px; padding: 5px; font-size: .9em; background-color: #FFFF99;">' . _AM_TINYCFG_SIMPLETOOLSETSMCEDSC . '</div>';
 
 	$pluginslist = '';
-	$dirname = ICMS_ROOT_PATH.'/editors/tinymce/jscripts/plugins/';
+	$dirname = ICMS_ROOT_PATH.'/editors/tinymce/jscripts/tiny_mce/plugins/';
 	$dir = opendir( $dirname );
 		while ( $filename = readdir( $dir ) ) {
 			if ( $filename != '.' && $filename != '..' && $filename != 'example' && $filename != 'CVS' && $filename != 'index.html' ) {

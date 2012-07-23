@@ -66,7 +66,7 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	}
 
 	$pluginslist = '';
-	$dirname = ICMS_ROOT_PATH.'/editors/tinymce/jscripts/plugins/';
+	$dirname = ICMS_ROOT_PATH.'/editors/tinymce/jscripts/tiny_mce/plugins/';
 	$dir = opendir( $dirname );
 		while ( $filename = readdir( $dir ) ) {
 			if ( $filename != '.' && $filename != '..' && $filename != 'example' && $filename != 'CVS' && $filename != 'index.html' ) {
