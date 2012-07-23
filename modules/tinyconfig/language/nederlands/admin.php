@@ -33,12 +33,6 @@ define( '_AM_TINYCFG_CONVERTURLSDSC', 'This option enables you to control whethe
 define( '_AM_TINYCFG_RELATIVEURLS', 'Relatieve URLs' );
 define( '_AM_TINYCFG_RELATIVEURLSDSC', 'Als de optie <i>ja</i> wordt gekozen, dan worden alle URLs van de Image Manager relatief van ' . ICMS_URL . '. Als de optie <i>nee</i> is dan worden alle URLs omgezet in absolute URLs.<br />Standaard: <i>nee</i>' );
 
-define( '_AM_TINYCFG_FORCEBR', 'Forceer BR elementen' );
-define( '_AM_TINYCFG_FORCEBRDSC', 'Deze optie forceert de uitvoer van BR elementen in plaats van P elementen.<br />Standaard: <i>nee</i>' );
-
-define( '_AM_TINYCFG_FORCEP', 'Forceer P elementen' );
-define( '_AM_TINYCFG_FORCEPDSC', 'Als de gekozen optie <i>Ja</i> is, dan zullen P elementen gegenereert worden bij aanslag van de Enter toets en BR elementen bij Shift+Enter toets.<br />Standaard: <i>ja</i>' );
-
 define( '_AM_TINYCFG_FIXLIST', 'Repareer lijst elementen' );
 define( '_AM_TINYCFG_FIXLISTDSC', 'Met deze optie kunt u specificeren dat lijst elementen UL/OL omgezet worden nar correcte XHTML.<br />Standaard: <i>false</i>' );
 
@@ -105,4 +99,8 @@ define( '_AM_TINYCFG_SIMPLETOOLSETSMCE', 'Simpele TinyMCE Taakbalken' );
 define( '_AM_TINYCFG_SIMPLETOOLSETSMCEDSC', 'Met dit formulier kunt u eenvoudige taakbalken maken. Deze set eenvoudige taakbalken kunnen bijvoorbeeld gebruikt worden voor de commentaren en de forum modules. Deze taakbalken zijn voor alle gebruikers groepen.' );
 define( '_AM_TINYCFG_SIMPLETOOLSAVE', 'Taakbalken voor de TinyMCE editor zijn opgeslagen.' );
 
+// TinyConfig 2.0
+define( '_AM_TINYCFG_BRINPRE', 'BR tag binnen een PRE tag optie' );
+define( '_AM_TINYCFG_BRINPREDSC', 'Deze optie is standaard ingeschakeld en verandert de wijze waarop de Enter toets wordt gebruikt binnen een pre-tag. Aangezien de meeste pre tags worden gebruikt voor zaken als bijv. code, maakte het zinvol om een BR tag te produceren en alleen pre tags te splitsen bij Shift + Enter.<br />Standaard: <i>true</i>' );
+define( '_AM_TINYCFG_BRTAG', 'br-tag' );
 ?>
