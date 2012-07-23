@@ -1,3 +1,58 @@
+==========
+TinyConfig
+==========
+
+TinyConfig is a module that let's you easily configure the WYSIWYG editor TinyMCE.
+With the module the toolbars can be configured per User Group and it's also possible to define a set of simple toolbars that can be used with the Comments for example.
+
+
+Configuration
+=============
+
+The following configuration options apply to all User Groups:
+- Verify HTML
+- Convert URLs
+- Relative URLs
+- BR tag within PRE tag option
+- Fix list elements
+- Forced root block
+- Schema (HTML4 or HTML5)
+- Custom CSS for editor area
+
+
+Toolsets
+========
+
+The toolsets can be set per User Group.
+The following options are available:
+- Plugins
+- Button bar 1
+- Button bar 2
+- Button bar 3
+- Button bar 4
+- Toolbar location
+- Elements path location
+- Resize
+- Select skin
+- Select skin variant
+
+
+Simple Toolsets
+===============
+
+The following options are available:
+- Plugins
+- Button bar 1
+- Button bar 2
+- Toolbar location
+- Elements path location
+- Resize
+- Select skin
+- Select skin variant
+
+
+
+
 ==========================
 Installation of TinyConfig
 ==========================
