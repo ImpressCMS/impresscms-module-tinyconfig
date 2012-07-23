@@ -63,7 +63,7 @@ define( '_AM_TINYCFG_BUTTONB3', 'Button bar 3' );
 define( '_AM_TINYCFG_BUTTONB4', 'Button bar 4' );
 
 define( '_AM_TINYCFG_FONTFAMILY', 'Font family' );
-define( '_AM_TINYCFG_FONTFAMILYDSC', 'This option should contain a semicolon separated list of font titles and font families separated by =. The titles are the ones that get presented to the user in the fonts drop down list and the font family name is the string that gets inserted into the font face or fontFamily CSS style.' );
+define( '_AM_TINYCFG_FONTFAMILYDSC', 'This option should contain a semicolon separated list of font titles and font families separated by =. The titles are the ones that get presented to the user in the fonts drop down list and the font family name is the string that gets inserted into the font face or font family CSS style.' );
 
 define( '_AM_TINYCFG_FONTSIZE', 'Font size' );
 define( '_AM_TINYCFG_FONTSIZEDSC', 'This option should contain a comma separated list of font sizes to include. Each item in the list should be a valid value for the font-style CSS property (10px, 12pt, 1em, etc.).' );
