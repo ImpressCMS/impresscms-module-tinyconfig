@@ -12,7 +12,7 @@
 * @version		$Id: xoopsimagebrowser.php 11512 2011-12-28 04:19:27Z skenow $
 */
 
-if (file_exists('../../../../../mainfile.php')) include_once '../../../../../mainfile.php';
+if (file_exists('../../../../../../mainfile.php')) include_once '../../../../../../mainfile.php';
 if (!defined('ICMS_ROOT_PATH')) die("ImpressCMS root path not defined");
 
 $icmsTpl = new icms_view_Tpl ( );

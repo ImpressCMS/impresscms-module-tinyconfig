@@ -1,5 +1,5 @@
 <?php
-if (file_exists('../../../../../mainfile.php')) include_once '../../../../../mainfile.php';
+if (file_exists('../../../../../../mainfile.php')) include_once '../../../../../../mainfile.php';
 if (!defined('ICMS_ROOT_PATH')) die("ImpressCMS root path not defined");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
