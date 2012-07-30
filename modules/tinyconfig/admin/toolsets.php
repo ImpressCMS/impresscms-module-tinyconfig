@@ -76,7 +76,7 @@ function toolsets_edit( $tinycfg_gid = 0 ) {
 	closedir($dir);
 	echo '<div style="border: 1px solid #D9D9D9; border-radius: 4px; margin-bottom: 10px; padding: 5px; font-size: .9em;"><b>' . _AM_TINYCFG_PLUGINSAVAIL . '</b> ' . $pluginslist . '</div>';
 
-	$icmsAdminTpl -> assign( 'xoops_module_header', '<script type="text/javascript" language="javascript" src="' . ICMS_LIBRARIES_URL . '/lytebox/lytebox.js"></script>
+	$icmsAdminTpl -> assign( 'icms_module_header', '<script type="text/javascript" language="javascript" src="' . ICMS_LIBRARIES_URL . '/lytebox/lytebox.js"></script>
 			<link rel="stylesheet" type="text/css" media="screen" href="' . ICMS_LIBRARIES_URL . '/lytebox/lytebox.css" />');
 
 	$sform = new icms_form_Theme( _AM_TINYCFG_TOOLSETSMCE, 'storyform', 'toolsets.php' );
