@@ -2,9 +2,9 @@
 Version 2.0
 ===========
 - Modified for TinyMCE 3.5.x
-- Removed force_br_newlines/force_p_newlines options
+- Removed force_br_newlines options
 - Added br_in_pre option to configuration
-- Added TinyMCE 3.5.5 to package
+- Added TinyMCE 3.5.6 to package
 - Removed plugins from TinyMCE: compat2x, safari
 - New TinyMCE plugins: example_dependency, visualblocks
 

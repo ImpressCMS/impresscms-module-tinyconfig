@@ -30,8 +30,8 @@ if( $ref == '' || strpos( $ref , ICMS_URL . '/modules/system/admin.php' ) === 0 
 		// TinyConfig 2.0		
 		$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'tinycfg_configs') . " DROP forcebr";
 		if ( !mysql_query( $sql ) ) {}
-		$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'tinycfg_configs') . " DROP forcep";
-		if ( !mysql_query( $sql ) ) {}
+	//	$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'tinycfg_configs') . " DROP forcep";
+	//	if ( !mysql_query( $sql ) ) {}
 
 		$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'tinycfg_configs') . " ADD COLUMN brinpre VARCHAR(128) NOT NULL default 'true'";
 		if ( !mysql_query( $sql ) ) {}

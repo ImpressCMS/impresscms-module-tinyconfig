@@ -33,6 +33,9 @@ define( '_AM_TINYCFG_CONVERTURLSDSC', 'This option enables you to control whethe
 define( '_AM_TINYCFG_RELATIVEURLS', 'Relative URLs' );
 define( '_AM_TINYCFG_RELATIVEURLSDSC', 'If this option is set to true, all URLs returned from the Image Manager will be relative from ' . ICMS_URL . '. If it\'s set to false all URLs will be converted to absolute URLs.<br />Default: <i>false</i>' );
 
+define( '_AM_TINYCFG_FORCEP', 'Force P elements' );
+define( '_AM_TINYCFG_FORCEPDSC', 'This option enables you to disable/enable the creation of paragraphs on return/enter in Mozilla/Firefox.<br />Default: <i>true</i>' );
+
 define( '_AM_TINYCFG_FIXLIST', 'Fix list elements' );
 define( '_AM_TINYCFG_FIXLISTDSC', 'This option enables you to specify that list elements UL/OL is to be converted to valid XHTML.<br />Default: <i>false</i>' );
 

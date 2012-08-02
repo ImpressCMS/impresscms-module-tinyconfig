@@ -33,6 +33,9 @@ define( '_AM_TINYCFG_CONVERTURLSDSC', 'This option enables you to control whethe
 define( '_AM_TINYCFG_RELATIVEURLS', 'Relatieve URLs' );
 define( '_AM_TINYCFG_RELATIVEURLSDSC', 'Als de optie <i>ja</i> wordt gekozen, dan worden alle URLs van de Image Manager relatief van ' . ICMS_URL . '. Als de optie <i>nee</i> is dan worden alle URLs omgezet in absolute URLs.<br />Standaard: <i>nee</i>' );
 
+define( '_AM_TINYCFG_FORCEP', 'Forceer P elementen' );
+define( '_AM_TINYCFG_FORCEPDSC', 'Als de gekozen optie <i>Ja</i> is, dan zullen P elementen gegenereert worden bij aanslag van de Enter toets en BR elementen bij Shift+Enter toets.<br />Standaard: <i>ja</i>' );
+
 define( '_AM_TINYCFG_FIXLIST', 'Repareer lijst elementen' );
 define( '_AM_TINYCFG_FIXLISTDSC', 'Met deze optie kunt u specificeren dat lijst elementen UL/OL omgezet worden nar correcte XHTML.<br />Standaard: <i>false</i>' );
 

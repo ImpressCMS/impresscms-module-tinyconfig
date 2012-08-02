@@ -10,6 +10,7 @@ CREATE TABLE `tinycfg_configs` (
 	`verifyhtml` varchar(128) NOT NULL default 'false',
 	`converturls` varchar(128) NOT NULL default 'false',
 	`relativeurls` varchar(128) NOT NULL default 'false',
+	`forcep` varchar(128) NOT NULL default 'true',
 	`fixlist` varchar(128) NOT NULL default 'false',
 	`forcedrootblock` varchar(128) NOT NULL default 'p',
 	`sschema` varchar(128) NOT NULL default 'html4',
@@ -17,7 +18,7 @@ CREATE TABLE `tinycfg_configs` (
 	`brinpre` varchar(128) NOT NULL default 'true'
 );
 
-INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,fixlist,forcedrootblock,sschema,brinpre) VALUES ('false','false','false','false','p','html4','true');
+INSERT INTO tinycfg_configs (verifyhtml,converturls,relativeurls,forcep,fixlist,forcedrootblock,sschema,brinpre) VALUES ('false','false','false','true','false','p','html4','true');
 
 
 #
