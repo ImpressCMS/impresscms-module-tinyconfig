@@ -41,7 +41,7 @@ $modversion = array(
 
 // ** Contributors **
 $modversion['people']['developers'] []	= '<a href="http://community.impresscms.org/userinfo.php?uid=179" target="_blank">McDonald</a>';
-$modversion['people']['other'][]		= 'Moxiecode AB (icon & text tooltips)';
+$modversion['people']['other'][]		= '<a href="http://www.tinymce.com/" target="_blank">Moxiecode Systems AB</a> (icon & text tooltips)';
 
 $modversion['people']['translators'][] = '&middot; <a href="http://community.impresscms.org/userinfo.php?uid=97" target="_blank">debianus</a> (Spanish)';
 $modversion['people']['translators'][] = '&middot; <a href="http://community.impresscms.org/userinfo.php?uid=179" target="_blank">McDonald</a>  (Dutch)';
