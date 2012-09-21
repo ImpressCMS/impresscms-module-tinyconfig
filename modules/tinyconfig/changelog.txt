@@ -1,4 +1,9 @@
 ===========
+Version trunk
+===========
+- Updated TinyMCE to version 3.5.7
+
+===========
 Version 2.0
 ===========
 - Modified for TinyMCE 3.5 branch
