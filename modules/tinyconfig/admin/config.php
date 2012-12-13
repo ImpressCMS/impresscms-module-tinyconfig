@@ -32,7 +32,6 @@ function config_edit() {
 	$verifyhtml		= $tinycfg_array['verifyhtml'] ? htmlspecialchars( $tinycfg_array['verifyhtml'] ) : 'false';
 	$converturls	= $tinycfg_array['converturls'] ? htmlspecialchars( $tinycfg_array['converturls'] ) : 'false';
 	$relativeurls	= $tinycfg_array['relativeurls'] ? htmlspecialchars( $tinycfg_array['relativeurls'] ) : 'false';
-	$forcep			= $tinycfg_array['forcep'] ? htmlspecialchars( $tinycfg_array['forcep'] ) : 'true';
 	$brinpre		= $tinycfg_array['brinpre'] ? htmlspecialchars( $tinycfg_array['brinpre'] ) : 'true';
 	$fixlist		= $tinycfg_array['fixlist'] ? htmlspecialchars( $tinycfg_array['fixlist'] ) : 'true';
 	$forcedrootblock= $tinycfg_array['forcedrootblock'] ? htmlspecialchars( $tinycfg_array['forcedrootblock'] ) : 'p-tag';
@@ -74,11 +73,6 @@ function config_edit() {
 	$fixlist_select = new icms_form_elements_Select( _AM_TINYCFG_FIXLIST . tinycfg_tooltip( _AM_TINYCFG_FIXLISTDSC, 'help' ), 'fixlist', $fixlist );
 	$fixlist_select -> addOptionArray( $fixlist_array );
 	$sform -> addElement( $fixlist_select );
-	
-	$forcep_array = array( 'false' => _AM_TINYCFG_FALSE, 'true' => _AM_TINYCFG_TRUE );
-	$forcep_select = new icms_form_elements_Select( _AM_TINYCFG_FORCEP . tinycfg_tooltip( _AM_TINYCFG_FORCEPDSC, 'help' ), 'forcep', $forcep );
-	$forcep_select -> addOptionArray( $forcep_array );
-	$sform -> addElement( $forcep_select );
 
 	$forcedrootblck_array = array( '' => _AM_TINYCFG_BRTAG, 'p' => _AM_TINYCFG_PTAG );
 	$forcedrootblck_select = new icms_form_elements_Select( _AM_TINYCFG_FORCEDRTBLCK . tinycfg_tooltip( _AM_TINYCFG_FORCEDRTBLCKDSC, 'help' ), 'forcedrootblock', $forcedrootblock );
@@ -118,13 +112,12 @@ switch ( strtolower( $op ) ) {
 		$converturls	= addslashes( trim( $_POST['converturls'] ) );
 		$relativeurls	= addslashes( trim( $_POST['relativeurls'] ) );
 		$brinpre		= addslashes( trim( $_POST['brinpre'] ) );
-		$forcep			= addslashes( trim( $_POST['forcep'] ) );
 		$forcedrootblock= addslashes( trim( $_POST['forcedrootblock'] ) );
 		$fixlist		= addslashes( trim( $_POST['fixlist'] ) );
 		$sschema		= addslashes( trim( $_POST['sschema'] ) );
 		$contentcss		= addslashes( trim( $_POST['contentcss'] ) );
 
-		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', brinpre='$brinpre', forcep='$forcep', forcedrootblock='$forcedrootblock', fixlist='$fixlist', sschema='$sschema', contentcss='$contentcss'";
+		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'tinycfg_configs' ) . " SET verifyhtml='$verifyhtml', converturls='$converturls', relativeurls='$relativeurls', brinpre='$brinpre', forcedrootblock='$forcedrootblock', fixlist='$fixlist', sschema='$sschema', contentcss='$contentcss'";
 		$result = icms::$xoopsDB -> queryF( $sql );
 		$error = 'DBERROR' . ': <br /><br />' . $sql;
 		if ( !$result ) {

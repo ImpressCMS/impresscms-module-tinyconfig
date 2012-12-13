@@ -1,7 +1,9 @@
 ===========
 Version trunk
 ===========
-- Updated TinyMCE to version 3.5.7
+- Updated TinyMCE to version 3.5.8
+- Removed force_p_newlines
+- Added TinyAutoSave plugin
 
 ===========
 Version 2.0
@@ -9,7 +11,7 @@ Version 2.0
 - Modified for TinyMCE 3.5 branch
 - Added TinyMCE 3.5.6 to package
 - Added br_in_pre option to configuration
-- Removed force_br_newlines options
+- Removed force_br_newlines
 - Removed plugins from TinyMCE: compat2x, safari
 - New TinyMCE plugins: example_dependency, visualblocks
 
