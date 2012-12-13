@@ -142,6 +142,7 @@ class TinyMCE {
 						$this->setting["theme_advanced_buttons3"] = '';
 						$this->setting["theme_advanced_buttons4"] = '';
 					}
+					$this->setting["tinyautosave_oninit"] = 'configAutoSave';
 				}
 
 				if ($this->setting["theme"] != "simple") {
@@ -421,6 +422,10 @@ class TinyMCE {
 					' . $content_css . '
 					tinymceload : "1"});
 					'.$callback.'
+					function configAutoSave() {
+						var tinyautosave = this;
+						tinyautosave.clear();
+					}
 					function showMCE(id) {
 						if (tinyMCE.getInstanceById(id) == null) {
 							tinyMCE.execCommand(\'mceAddControl\', false, id);
