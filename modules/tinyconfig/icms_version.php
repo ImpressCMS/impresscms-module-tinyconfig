@@ -48,7 +48,8 @@ $modversion['people']['other'][]		= '&middot; <a href="http://lytebox.com" targe
 $modversion['people']['translators'][]	= '&middot; <a href="http://community.impresscms.org/userinfo.php?uid=97" target="_blank">debianus</a> (Spanish)';
 $modversion['people']['translators'][]	= '&middot; <a href="http://community.impresscms.org/userinfo.php?uid=179" target="_blank">McDonald</a>  (Dutch)';
 
-$modversion['manual']['wiki'][] = '<a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE Configuration</a>';
+$modversion['manual']['wiki'][] = '&middot; <a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE Configuration</a>';
+$modversion['manual']['wiki'][] = '&middot; <a href="http://www.tinymce.com/wiki.php/Plugins" target="_blank">TinyMCE Plugins</a>';
 
 $modversion['warning'] = _CO_ICMS_WARNING_BETA;
 
