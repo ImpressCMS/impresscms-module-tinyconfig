@@ -416,7 +416,6 @@ class TinyMCE {
 					remove_script_host : ' . $tinycfg_configs['relativeurls'] . ',
 					br_in_pre : ' . $tinycfg_configs['brinpre'] . ',
 					fix_list_elements: ' . $tinycfg_configs['fixlist'] . ',
-					force_p_newlines : ' . $tinycfg_configs['forcep'] . ',
 					forced_root_block : "' . $tinycfg_configs['forcedrootblock'] . '",
 					schema : "' . $tinycfg_configs['sschema'] . '",
 					' . $content_css . '
