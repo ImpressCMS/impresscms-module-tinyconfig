@@ -81,6 +81,20 @@ class TinyMCE {
 		}
 		return $tinyconfig_included;
 	}
+	
+	function elfinder_included() {
+		static $elfinder_included;
+		if ( !isset( $elfinder_included ) ) {
+			$modules_handler = icms::handler( 'icms_module' );
+			$elfinder_mod = $modules_handler -> getByDirName( 'elfinder' );
+			if ( !$elfinder_mod ) {
+				$elfinder_mod = false;
+			} else {
+				$elfinder_included = $elfinder_mod -> getVar( 'isactive' ) == 1;
+			}
+		}
+		return $elfinder_included;
+	}
 
 	/*
 	 * Initializes the tinyMCE
@@ -405,6 +419,16 @@ class TinyMCE {
 				if ( is_file( ICMS_ROOT_PATH . '/' . $tinycfg_configs['contentcss'] ) ) { 
 					$content_css = 'content_css : "' . $tinycfg_configs['contentcss'] . '",';
 				}
+				
+				static $elfinder_included;
+				$elfinderbrowser = '';
+				if ( !isset( $elfinder_included ) ) {
+					$modules_handler = icms::handler( 'icms_module' );
+					$elfinder_mod = $modules_handler -> getByDirName( 'elfinder' );
+					if ( $elfinder_mod && $elfinder_mod -> getVar( 'isactive' ) == 1 ) {
+						$elfinderbrowser = 'elFinderBrowser';
+					}
+				}
 
 				$ret .= '
 					skin : "' . $tinycfg_tools['skin'] . '",
@@ -418,6 +442,7 @@ class TinyMCE {
 					fix_list_elements: ' . $tinycfg_configs['fixlist'] . ',
 					forced_root_block : "' . $tinycfg_configs['forcedrootblock'] . '",
 					schema : "' . $tinycfg_configs['sschema'] . '",
+					file_browser_callback: "' . $elfinderbrowser . '",
 					' . $content_css . '
 					tinymceload : "1"});
 					'.$callback.'
@@ -425,12 +450,30 @@ class TinyMCE {
 						var tinyautosave = this;
 						tinyautosave.clear();
 					}
+					
 					function showMCE(id) {
 						if (tinyMCE.getInstanceById(id) == null) {
 							tinyMCE.execCommand(\'mceAddControl\', false, id);
 						} else {
 							tinyMCE.execCommand(\'mceRemoveControl\', false, id);
 						}
+					}
+					function elFinderBrowser (field_name, url, type, win) {
+						var elfinder_url = "' . ICMS_URL . '/modules/elfinder/tinymce.php";
+						tinyMCE.activeEditor.windowManager.open({
+							file: elfinder_url,
+							title: "File Manager",
+							width: 900,  
+							height: 450,
+							resizable: "yes",
+							inline: "yes",
+							popup_css: false,
+							close_previous: "no"
+						}, {
+							window: win,
+							input: field_name
+						});
+						return false;
 					}
 					</script>
 				';
